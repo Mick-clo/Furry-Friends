@@ -1,0 +1,55 @@
+.card-shelter {
+  position: relative;
+  width: 300px;
+  height: 425px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+}
+
+.card-shelter img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-shelter-infos {
+  padding: 10px;
+  background-color: #f8f8f8;
+}
+
+.card-shelter-infos h2 {
+  margin: 0;
+  font-size: 24px;
+  color: #333;
+}
+
+.card-shelter-infos p {
+  margin: 5px 0;
+  font-size: 16px;
+  color: #666;
+}
+
+.card-shelter-infos span {
+  font-weight: bold;
+  color: #000;
+}
+
+.card-shelter-infos a {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+  
+}
+
+.card-shelter-infos a:hover {
+  background-color: #0056b3;
+  color: #fff;
+}
