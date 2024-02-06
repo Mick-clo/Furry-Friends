@@ -1,0 +1,21 @@
+<div style="width: 100%; height: 600px;"
+  data-controller="map"
+  data-map-markers-value="<%= @markers.to_json %>"
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+
+<br>
+<br>
+<div class="d-flex flex-wrap">
+  <% @shelters.each do |shelter| %>
+    <div class="card-product">
+      <div class="card-product-infos">
+      <img src="https://www.southernliving.com/thmb/_6DRkgHuqeUD4ZEqjV4eEyXB_YA=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-999587886-2000-3032f84051be4e9c9cb0aa64ed493854.jpg">
+        <h2> <%= shelter.name %> </h2>
+        <em> <%= shelter.address %></em>
+        <p> <%= shelter.description %> </p>
+        <%= link_to "Donate", "#" %>
+        <%= link_to "See shelter's website", "#" %>
+      </div>
+    </div>
+  <% end %>
+</div>
