@@ -1,0 +1,7 @@
+<%= simple_form_for(@chatroom, html: { method: :put }, data: { action: "new-channel#addChannel"}) do |f| %>
+  <%= f.error_notification %>
+  <%= f.input :name %>
+  <div class="form-actions">
+      <%= f.button :submit, class: 'btn btn-primary' %>
+  </div>
+<% end %>
