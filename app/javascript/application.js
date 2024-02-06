@@ -3,3 +3,5 @@ import "@hotwired/turbo-rails"
 import "controllers"
 import "@popperjs/core"
 import "bootstrap"
+// import "@fortawesome/fontawesome-free/css/all.css";
+import "@rails/actioncable"
