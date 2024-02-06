@@ -1,0 +1,34 @@
+.banner{
+  height:100vh;
+  display: flex;
+  justify-content: space-around;
+  align-items:center;
+  background-image:image-url("BG.jpg");
+  // image:image-url("Doggo.jpg") ; background-position: right top;
+  background-size: cover;
+  margin-bottom: -64px;
+  color: #333;
+  h1{
+    font-weight: bold;
+    font-size: 48px;
+  }
+
+  p{
+    font-size: 24px;
+    margin-bottom: 64px;
+  }
+
+  // #gradient{
+  //   background-image: linear-gradient(to right, #4392f1, #ff6ec4, #ffab73, #58d9eb); /* Gradient colors */
+  //   border: none; /* Remove border */
+  //   color: white; /* Text color */
+  //   padding: 10px 20px; /* Padding */
+  //   font-size: 16px; /* Font size */
+  //   cursor: pointer; /* Cursor style */
+  //   border-radius: 5px; /* Rounded corners */
+  //   transition: background-color 0.3s ease; /* Smooth transition */
+  //   text-transform: uppercase; /* Uppercase text */
+  //   letter-spacing: 1px; /* Spacing between letters */
+  //   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
+  // }
+}
