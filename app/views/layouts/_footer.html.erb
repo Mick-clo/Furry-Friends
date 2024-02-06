@@ -1,5 +1,37 @@
-<div class="footer">
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-section">
+      <h3>Furry Friend</h3>
+      <!--  logo here -->
+    </div>
 
- <p>&copy; <%= Time.current.year %> <strong> Furry Friend </strong>. All rights reserved. Your donations never end!</p>
+    <div class="footer-section">
+      <h4>More information</h4>
+      <ul>
+        <li><%= link_to 'Map', "#" %></li>
+        <li><%= link_to 'Our value proposition', "#" %></li>
+        <li><%= link_to 'Join us', "#" %></li>
+        <li><%= link_to 'Profile', "#" %></li>
+      </ul>
+    </div>
 
-</div>
+    <div class="footer-section">
+      <h4>Stay in contact</h4>
+      <ul>
+        <li><a href="mailto:info@contact.com">info@contact.com</a></li>
+        <li><a href="tel:+34654654654">+34 654 654 654</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>Wagon © 2024. All rights reserved.</p>
+    <ul>
+      <li><%= link_to 'Privacy Policy'," #" %></li>
+      <li><%= link_to 'Cookies', "#" %></li>
+      <li><%= link_to 'Legal Advice', "#" %></li>
+      <li><%= link_to 'FAQ', "#" %></li>
+    </ul>
+    <p>Made by Furry Friend Team</p>
+  </div>
+</footer>
