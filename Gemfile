@@ -3,8 +3,6 @@ source "https://rubygems.org"
 ruby "3.1.2"
 
 gem "geocoder"
-gem "sidekiq", "< 7"
-gem "sidekiq-failures", "~> 1.0"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.1.3"
@@ -56,7 +54,7 @@ gem "simple_form", github: "heartcombo/simple_form"
 gem "sassc-rails"
 gem 'omniauth-google-oauth2'
 gem "omniauth-rails_csrf_protection"
-gem "sidekiq", "< 7"
+gem "sidekiq", "~> 6.5.5"
 gem "sidekiq-failures", "~> 1.0"
 
 group :development, :test do
