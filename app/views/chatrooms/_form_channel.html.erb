@@ -1,4 +1,4 @@
-<%= simple_form_for(@chatroom, html: { method: :put }, data: { action: "new-channel#addChannel"}) do |f| %>
+<%= simple_form_for(@chatroom_new, html: { data: { action: "new-channel#addChannel"}}) do |f| %>
   <%= f.error_notification %>
   <%= f.input :name %>
   <div class="form-actions">
