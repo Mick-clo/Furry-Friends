@@ -4,6 +4,19 @@ class PetsController < ApplicationController
   def show
   end
 
+  def new
+    @pet = Pet.new
+  end
+
+  def create
+    @pet = Pet.new(pet_params)
+    if @pet.save
+      redirect_to @pet
+    else
+      render :new
+    end
+  end
+
   def feed
     @pet.update(food_level: [@pet.food_level + 20, 100].min)
     redirect_to @pet, notice: 'Pet fed!'
@@ -23,5 +36,9 @@ class PetsController < ApplicationController
 
   def set_pet
     @pet = Pet.find(params[:id])
+  end
+
+  def pet_params
+    params.require(:pet).permit(:name, :species)
   end
 end
