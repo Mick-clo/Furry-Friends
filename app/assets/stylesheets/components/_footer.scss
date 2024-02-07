@@ -1,8 +1,6 @@
-
 .footer {
   background-color: #333;
-  color: white;
-  font-family: Arial, sans-serif;
+  color: #ddd;
   position: sticky;
   bottom: 0;
   width: 100%;
@@ -11,14 +9,18 @@
 .footer-content {
   display: flex;
   justify-content: space-around;
-  align-items: start;
+  align-items: flex-start;
   flex-wrap: wrap;
-  padding: 10px;
+  padding: 20px 10px;
 }
 
-.footer-section h3, .footer-section h4 {
-  margin-bottom: 15px;
+.footer-section {
+  flex: 1;
+  margin: 0 10px;
+}
 
+.footer-section h3 {
+  margin-bottom: 10px;
 }
 
 .footer-section ul {
@@ -26,27 +28,38 @@
   padding: 0;
 }
 
+.footer-section ul li {
+  margin-bottom: 5px;
+}
+
 .footer-section ul li a {
-  color: white;
+  color: #ccc;
   text-decoration: none;
 }
 
 .footer-bottom {
   display: flex;
   justify-content: space-between;
-  border-top: 1px solid #777;
+  align-items: center;
+  border-top: 1px solid #585858;
   text-align: center;
-  padding: 10px 20px 0px;
-  margin: 0px,20px;
+  padding: 20px;
 }
 
-.footer-bottom p, .footer-bottom ul {
-  margin: 10px 0;
+.footer-bottom p,
+.footer-bottom ul li {
+  margin: 0;
 }
 
 .footer-bottom ul {
   list-style: none;
   padding: 0;
+}
+
+.footer-title {
+  color: white;
+  font-weight: bold;
+  font-family: 'Montserrat', sans-serif; /* Added font family */
 }
 
 .footer-bottom ul li {
@@ -55,6 +68,10 @@
 }
 
 .footer-bottom ul li a {
-  color: white;
+  color: #ccc;
   text-decoration: none;
+}
+
+.footer-bottom ul li a:hover {
+  color: #fff;
 }
