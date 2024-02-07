@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
+  require "sidekiq/web"
+  authenticate :user, ->(user) { user.admin? } do
+    mount Sidekiq::Web => '/sidekiq'
+  end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
@@ -16,7 +20,7 @@ Rails.application.routes.draw do
 
     resources :messages, only: :create
   end
-  resources :pets, only: [:show]do
+  resources :pets, only: [:show, :new, :create] do
     member do
       post 'feed'
       post 'play'

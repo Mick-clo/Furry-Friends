@@ -1,0 +1,28 @@
+<div class="d-flex flex-column justify-content-center">
+
+<div class="d-flex justify-content-center">
+<h1>Let's adopt a virtual pet!</h1>
+</div>
+
+    <%= simple_form_for @pet do |f| %>
+
+<div class="d-flex justify-content-around">
+<i class="fa-solid fa-circle-plus"></i>
+<h4> Choose your pet: </h4>
+    <%= f.input :username %>
+</div>
+
+<div class="d-flex justify-content-around">
+<i class="fa-solid fa-circle-plus"></i>
+
+<h4> Choose a name: </h4>
+    <%= f.input :password %>
+</div>
+
+<div class="d-flex justify-content-center">
+<button class="btn btn-outline-dark"><%= f.button :submit %></button>
+</div>
+
+    <% end %>
+
+</div>
