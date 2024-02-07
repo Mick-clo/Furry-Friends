@@ -2,6 +2,7 @@
   p{
     color: #333;
     font-size: 18px;
+    margin-bottom:40px;
   }
 }
 .value-prop-heading {
@@ -10,6 +11,40 @@
   margin-bottom: 40px;
   color: #333;
   text-align: center;
+}
 
-  
+.grid-cont {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 16px;
+}
+.primary-card {
+  grid-column: span 2;
+}
+.primary-card, .vp-card {
+  padding: 64px;
+  border-radius: 10px;
+  color: #333;
+  background-color: #f8f9fa;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+.round-button {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  background-color: black; /* Primary button color */
+  color: #fff; /* Button text color */
+  border: none;
+}
+.round-button i {
+  font-size: 24px;
+}
+.modal-dialog {
+  max-width: 800px; /* Adjust the maximum width of the modal */
+}
+.card-image {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 5px;
 }

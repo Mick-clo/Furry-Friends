@@ -3,4 +3,10 @@ class PagesController < ApplicationController
 
   def home
   end
+
+  def dashboard
+    @user = current_user
+    @pets = @user.pets
+    @orders = @user.orders
+  end
 end
