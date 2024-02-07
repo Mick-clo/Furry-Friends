@@ -1,11 +1,13 @@
-<div class="d-flex flex-row">
-  <div>
-    <h3>Channels</h3>
+<div class="d-flex flex-row p-3">
+  <div class= "d-flex flex-column border p-4 rounded">
+    <h3 class="pb-3">Channels</h3>
     <% @chatrooms.each do |chatroom| %>
-      <a href="<%= chatroom_path(chatroom) %>"><%= chatroom.name %></a>
+      <a href="<%= chatroom_path(chatroom) %>" class="btn btn-outline-dark"><%= chatroom.name %></a>
     <% end %>
+
     <br>
-    <div data-controller="new-channel">
+
+    <div class="d-flex justify-content-center align-items-end" data-controller="new-channel">
 
     <button data-action="click->new-channel#openModal"
     class="btn btn-outline-dark"
@@ -14,7 +16,7 @@
     </button>
 
     <div data-new-channel-target="modal"
-    id="change_avatar" class="btn btn-success d-none">
+    id="creating_channel" class="d-none">
     <%= render "form_channel" %>
     </div>
     </div>
