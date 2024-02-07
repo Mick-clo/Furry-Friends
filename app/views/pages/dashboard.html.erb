@@ -1,0 +1,6 @@
+<div class="container">
+  <h1>Hey <%@user.username%></h1>
+  <div class="user-actions">
+    <%= image_tag @user.profile_picture_url if @user.profile_picture.attached? %>
+  </div>
+</div>
