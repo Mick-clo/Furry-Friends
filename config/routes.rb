@@ -11,7 +11,9 @@ Rails.application.routes.draw do
   # root "posts#index"
   resources :shelters, only: [:index, :show]
 
+
   resources :chatrooms, only: [:show, :new, :create] do
+
     resources :messages, only: :create
   end
   resources :pets, only: [:show]do
