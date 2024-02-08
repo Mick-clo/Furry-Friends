@@ -1,0 +1,110 @@
+.pet-name{
+  text-align: center;
+  margin: 10px;
+}
+.pet-status {
+  .status-item {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .progress-circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%; /* Makes the div circular */
+    background-color: #e6e6e6; /* Light grey background */
+    position: relative;
+    margin: 0 auto; /* Centers the circle */
+
+    /* Creates the inner text styling */
+    &:after {
+      content: attr(data-percentage) '%';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 20px;
+      color: #333;
+    }
+  }
+}
+
+
+.pet-display {
+  display: flex;
+  justify-content: space-between;
+  /*background-color: #f0f0f0;  A light grey background */
+  border-radius: 10px; /* Rounded corners */
+  padding: 20px; /* Space inside the border */
+  margin: 20px auto; /* Center the display and add space around it */
+  max-width: 100%; /* Maximum width of the display */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* A subtle shadow for depth */
+
+  h2 {
+    font-size: 1.5em; /* Size of the pet's name */
+    color: #333; /* Darker text for better readability */
+    margin-bottom: 0.5em; /* Space below the pet's name */
+  }
+
+  p {
+    font-size: 1em; /* Size of the message text */
+    color: #666; /* Lighter text for the message */
+    margin-bottom: 1em; /* Space below the message */
+  }
+
+  .pet-image {
+    align-items: center;
+    display: block; /* Ensures the image is a block-level element */
+    width: 150px; /* Width of the image */
+    height: 150px; /* Height of the image */
+    object-fit: cover; /* Ensures the image covers the area without being stretched */
+    border-radius: 50%; /* Makes the image circular */
+    margin: 0 auto 1em; /* Centers the image and adds space below */
+  }
+}
+
+
+.pet-actions {
+  display: flex;
+  justify-content: center;
+  text-align: center; /* Center the buttons */
+  margin-top: 20px ; /* Add space above the button group */
+
+  .secondry-button {
+    display: inline-block;
+    margin-right: 10px;
+    /* Add more styling for  buttons */
+  }
+}
+
+
+
+.secondary-button {
+  background-color: transparent; /* Transparent background */
+  border: none; /* Remove border */
+  color: #000; /* Button text color */
+  font-weight: bold; /* Make the text bold */
+  margin: 0 10px; /* Add horizontal space between buttons */
+  padding: 10px 20px; /* Padding inside the buttons */
+  text-decoration: none; /* Remove underline from text */
+  display: inline-block; /* Align buttons in a row */
+  position: relative; /* Needed for the positioning of the pseudo-element */
+}
+
+.secondary-button:before {
+  content: '+'; /* Add the plus sign */
+  position: absolute;
+  left: 0px; /* Position the plus sign to the left of the button text */
+  color: #000; /* Plus sign color */
+}
+
+.secondary-button:hover {
+  background-color: #f0f0f0; /* Slight background on hover for feedback */
+}
+ .message{
+  align-self: center;
+  justify-self: center;
+  color: #000;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: large;
+ }
