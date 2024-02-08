@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  require_relative 'pet'
   has_many :messages
   has_many :pets, dependent: :destroy
 
@@ -9,5 +10,15 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   def pet
     Pet.find_by(user_id: id)
+  end
+
+  def picture_url
+    if pet.present? && pet.species == 'cat'
+      'cat.png'
+    elsif pet.present? && pet.species == 'dog'
+      'dog.png'
+    else
+      'puppy-test.jpg'
+    end
   end
 end

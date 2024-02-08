@@ -8,5 +8,6 @@ class PagesController < ApplicationController
     @user = current_user
     @pets = @user.pets
     @orders = @user.orders
+    
   end
 end
