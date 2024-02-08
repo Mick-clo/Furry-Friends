@@ -1,4 +1,5 @@
 .pet-image {
+  opacity: 0.5;
   --s: 100px; /* image size */
   --b: 3px; /* border thickness */
   --c: #29a6c0; /* border color */
@@ -32,4 +33,5 @@
 }
 .pet-image:hover {
   --f: 1.35; /* hover scale */
+  opacity: 1;
 }
