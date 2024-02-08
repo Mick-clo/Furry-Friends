@@ -54,6 +54,8 @@ gem "simple_form", github: "heartcombo/simple_form"
 gem "sassc-rails"
 gem 'omniauth-google-oauth2'
 gem "omniauth-rails_csrf_protection"
+gem "sidekiq", "~> 6.5.5"
+gem "sidekiq-failures", "~> 1.0"
 
 group :development, :test do
   gem "dotenv-rails"
