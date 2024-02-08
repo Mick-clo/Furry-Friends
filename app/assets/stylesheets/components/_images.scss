@@ -1,4 +1,4 @@
-.pet-image {
+.photo-pet {
   opacity: 0.5;
   --s: 100px; /* image size */
   --b: 3px; /* border thickness */
@@ -31,7 +31,7 @@
   transform: scale(var(--f));
   transition: .5s;
 }
-.pet-image:hover {
+.photo-pet:hover {
   --f: 1.35; /* hover scale */
   opacity: 1;
 }

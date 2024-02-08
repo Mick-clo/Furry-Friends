@@ -1,7 +1,7 @@
 input[type="radio"] {
   visibility: hidden;
 
-  &:checked + label > .pet-image {
+  &:checked + label > .photo-pet {
     opacity: 1;
   }
 
