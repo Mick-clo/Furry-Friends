@@ -13,13 +13,12 @@ class User < ApplicationRecord
   end
 
   def picture_url
-    @avatar = user.avatar
-    if @pet.species == 'cat'
-      @avatar = image_tag('cat.png', alt: 'cat')
-    elsif @pet.species == 'dog'
-      @avatar = image_tag('dog.png', alt: 'dog')
+    if pet.present? && pet.species == 'cat'
+      'cat.png'
+    elsif pet.present? && pet.species == 'dog'
+      'dog.png'
     else
-      @avatar = image_tag('puppy-test', alt: 'puppy')
+      'puppy-test.jpg'
     end
   end
 end
