@@ -9,3 +9,6 @@
 #   end
 
 Shelter.create(name: "doggos", description: "awesome doggos", address: "Lisbon")
+
+user = User.last
+pet = Pet.create(name: "Rex", species: "dog", user: user, shelter: Shelter.last)

@@ -19,17 +19,17 @@ class PetsController < ApplicationController
 
   def feed
     @pet.update(food_level: [@pet.food_level + 20, 100].min)
-    redirect_to @pet, notice: 'Pet fed!'
+    redirect_to @pet, notice: 'You fed your pet! Good job!'
   end
 
   def play
     @pet.update(satisfaction: [@pet.satisfaction + 20, 100].min, boredom: [@pet.boredom - 20, 0].max)
-    redirect_to @pet, notice: 'Pet played with!'
+    redirect_to @pet, notice: 'You played with your pet! He is happy!'
   end
 
   def care
     @pet.update(satisfaction: [@pet.satisfaction + 10, 100].min)
-    redirect_to @pet, notice: 'Pet cared for!'
+    redirect_to @pet, notice: 'Took care of your pet! Horray!'
   end
 
   private

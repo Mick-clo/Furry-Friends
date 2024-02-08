@@ -1,32 +1,53 @@
+
 <div class="container">
   <h1 class="title">Hey <%=@user.username%></h1>
-  <div class="pet-stats">
-    <div class="your-pet">
-      <h2>Your pet</h2>
-      <%= image_tag @user.picture_url, class:"pet-picture"%>
-      <%= @pets.name%>
+  <div class="container-first">
+    <div class="pet-stats">
+      <% @pets.each do |pet|%>
+      <div class="your-pet">
+        <h2>Your pet</h2>
+        <%= image_tag @user.picture_url, class:"pet-picture"%>
+        <%= pet.name%>
+      </div>
+      <div class="pet-status">
+        <div class="status-item">
+          <div class="donut" style="<%="background: conic-gradient(gray #{pet.satisfaction}%, #fff 0 100%);"%>">
+          <div class="donut__gap"><p align="center">Satisfaction <br><%=pet.satisfaction%>%</p></div>
+          </div>
+        </div>
+
+        <div class="status-item">
+          <div class="donut" style="<%="background: conic-gradient(gray #{pet.food_level}%, #fff 0 100%);"%>">
+          <div class="donut__gap"><p align="center">Food Level <br><%=pet.food_level%>%</p></div>
+          </div>
+        </div>
+
+        <div class="status-item">
+          <div class="donut" style="<%="background: conic-gradient(gray #{pet.boredom}%, #fff 0 100%);"%>">
+          <div class="donut__gap"><p align="center">Boredom <br><%=pet.boredom%>%</p></div>
+          </div>
+        </div>
+
+        <div class="status-item">
+          <div class="donut" style="<%="background: conic-gradient(gray #{pet.health}%, #fff 0 100%);"%>">
+          <div class="donut__gap"><p align="center">Health <br><%=pet.health%>%</p></div>
+          </div>
+        </div>
+        <%end%>
+      </div>
     </div>
-    <div class="pet-status">
-      <div class="status-item">
-        <p>Satisfaction</p>
-        <div class="progress-circle" data-percentage="<%=%>"></div>
-      </div>
-
-      <div class="status-item">
-        <p>Food Level</p>
-        <div class="progress-circle" data-percentage="<%= %>"></div>
-      </div>
-
-      <div class="status-item">
-        <p>Boredom</p>
-        <div class="progress-circle" data-percentage="<%=%>"></div>
-      </div>
-
-      <div class="status-item">
-        <p>Health</p>
-        <div class="progress-circle" data-percentage="<%= %>"></div>
-      </div>
+    <div class="message">
+      <h3><%= @random_message %></h3>
     </div>
-</div>
+  </div>
+  <div class="container-second">
+  <h2>Top donations of the month</h2>
+  <table>
+  <tr>
+    <th>Place</th>
+    <th>Pet owner</th>
+    <th>Pet satisfaction level</th>
+    <th>Donated amount</th>
+  </tr>
   </div>
 </div>
