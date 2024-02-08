@@ -9,6 +9,7 @@ class Pet < ApplicationRecord
 
   has_many :orders
   has_one_attached :picture
+  before_create :set_default_levels
   def picture_url
     if type == 'cat'
       'cat.png'
