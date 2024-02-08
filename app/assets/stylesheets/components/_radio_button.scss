@@ -1,0 +1,15 @@
+input[type="radio"] {
+  visibility: hidden;
+
+  &:checked+label {
+    background-color:red;
+  }
+  &:hover+label {
+    background-color: blue;
+  }
+}
+
+.collection_radio_buttons {
+  font-weight: bold;
+  font-size: larger;
+}

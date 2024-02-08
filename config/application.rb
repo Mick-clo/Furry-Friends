@@ -14,6 +14,7 @@ module FurryFriends
       generate.test_framework :test_unit, fixture: false
       config.active_job.queue_adapter = :sidekiq
     end
+    config.active_job.queue_adapter = :sidekiq
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.1
 
@@ -29,5 +30,6 @@ module FurryFriends
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    config.active_job.queue_adapter = :sidekiq
   end
 end

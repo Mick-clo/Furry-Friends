@@ -3,45 +3,136 @@
     <h1>Furry Friend <br>
 your donations never end !</h1>
     <p>Donate.Play.Support.</p>
-    <%= link_to "Find a shelter", class:"btn btn-lg btn-primary " %>
+    <%= link_to "Find a shelter", shelters_path, class:"btn btn-lg btn-primary " %>
   </div>
 </div>
 
- <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-md-4">
-        <div class="overview-card text-center">
-          <i class="fas fa-donate card-icon"></i>
-          <h2 class="card-title">+8500€</h2>
-          <p>Donated</p>
-        </div>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-4">
+      <div class="overview-card text-center">
+        <i class="fas fa-donate card-icon"></i>
+        <h2 class="card-title">+8500€</h2>
+        <p>Donated</p>
       </div>
-      <div class="col-md-4">
-        <div class="overview-card text-center">
-          <i class="fas fa-users card-icon"></i>
-          <h2 class="card-title">+354</h2>
-          <p>Collaborators </p>
-        </div>
+    </div>
+    <div class="col-md-4">
+      <div class="overview-card text-center">
+        <i class="fas fa-users card-icon"></i>
+        <h2 class="card-title">+354</h2>
+        <p>Collaborators </p>
       </div>
-      <div class="col-md-4">
-        <div class="overview-card text-center">
-          <i class="fas fa-home card-icon"></i>
-          <h2 class="card-title">+468</h2>
-          <p>Animals saved</p>
-        </div>
+    </div>
+    <div class="col-md-4">
+      <div class="overview-card text-center">
+        <i class="fas fa-home card-icon"></i>
+        <h2 class="card-title">+468</h2>
+        <p>Animals saved</p>
       </div>
     </div>
   </div>
+</div>
 
-<section class="value-prop-section">
+<section class="value-prop-section container">
   <h2 class="value-prop-heading text">Our Value Proposition</h2>
   <p class="text-center">We provide support not only to animals in need,<br>
 but also to owners who didn’t have experience with a pet before.</p>
 
+  <div class="grid-cont">
+  <div class="primary-card">
+    <h3>Virtual pet</h3>
+
+    <!-- Button trigger modal -->
+    <button type="button" class="round-button" data-bs-toggle="modal" data-bs-target="#staticBackdrop1">
+      <i class="fa-solid fa-plus"></i>
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel1" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="staticBackdropLabel1">Virtual pet</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+          <h3>Get your virtial pet ! </h3>
+            <p>With FurryFriend you can adopt a virtual pet that you can feed,
+            buy toys for and make sure his health is good!
+            All the money you spend for your pet will be transfared to
+            the shelters that you select nearby you.You can see the rating
+            of all virtual pets and if your pet is on top of it. </p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary">Adopt a virtual pet</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="vp-card">
+    <h3> Adopt </h3>
+    <!-- Button trigger modal -->
+    <button type="button" class="round-button" data-bs-toggle="modal" data-bs-target="#staticBackdrop2">
+      <i class="fa-solid fa-plus"></i>
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel2" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="staticBackdropLabel2">Adopt</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+          <h3>Adopt a real animal!</h3>
+            <p>If you have an opportunity to adopt a real pet and still be able
+             to donate to not yet adopted pets who are waiting for its owner in the shelpter,
+             we encorage you to go directly to the web site of the shelter nearby you and choosee your future pet there. Don't forget to donate to its friends after too! They also need your support
+             </p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary">Find a shelter</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="vp-card">
+    <h3> Connect </h3>
+    <!-- Button trigger modal -->
+    <button type="button" class="round-button" data-bs-toggle="modal" data-bs-target="#staticBackdrop3">
+      <i class="fa-solid fa-plus"></i>
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop3" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel3" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="staticBackdropLabel3">Connect</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <h3>Connect with others to support animals in need!</h3>
+            <p>We provide different chatrooms where you can connect with other people and see if there are anything you can help with andalso share your experience if anyone needs some help ! </p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary">Find the shelter</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
 </section>
 
 <section class="join_us">
-<h2 class="text-center">Join us</h2>
-<p class="text-center">Supporting animals in need </p>
- <%= link_to "Join now", class:"btn btn-lg btn-primary text-center" %>
+<div class="text-center">
+  <h2>Join us</h2>
+  <p>Supporting animals in need </p>
+  <%= link_to "Join now", shelters_path, class:"btn btn-lg btn-primary text-center" %>
+</div>
 </section>
