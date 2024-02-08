@@ -12,6 +12,7 @@ module FurryFriends
       generate.assets false
       generate.helper false
       generate.test_framework :test_unit, fixture: false
+      config.active_job.queue_adapter = :sidekiq
     end
     config.active_job.queue_adapter = :sidekiq
     # Initialize configuration defaults for originally generated Rails version.
