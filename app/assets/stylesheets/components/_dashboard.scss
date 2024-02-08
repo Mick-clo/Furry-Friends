@@ -1,0 +1,20 @@
+.title{
+  text-align: center;
+  padding: 16px;
+}
+
+.your-pet{
+  text-align: center;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 160px;
+}
+
+.pet-picture{
+  width: 100px;
+  border-radius: 50%;
+  padding: 10px;
+  
+}
