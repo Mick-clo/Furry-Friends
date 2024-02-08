@@ -5,7 +5,7 @@ class BoredomJob < ApplicationJob
     # Do something later
     @pets = Pet.all
     @pets.each do |pet|
-      pet.boredom -= 10 if pet.boredom >= 10
+      pet.boredom += 10 if pet.boredom <= 100
       pet.save
     end
   end
