@@ -4,6 +4,8 @@ class User < ApplicationRecord
   has_many :pets
 
   has_many :orders, through: :pets
+  validates :username, presence: true
+  validates :satisfaction, presence: true, numericality: { only_integer: true }
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,

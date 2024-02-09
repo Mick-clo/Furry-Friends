@@ -28,7 +28,10 @@
   <div class="navbar-container"><%= render "layouts/navbar" %></div>
   <div class="content-container"><%= yield %></div>
 
-  <br>
-  <div class="footer-container"><%= render "layouts/footer" %></div>
+  <%if @footer%>
+    <br>
+    <div class="footer-container"><%= render "shared/footer" %></div>
+    </div>
+  <%end%>
   </body>
 </html>
