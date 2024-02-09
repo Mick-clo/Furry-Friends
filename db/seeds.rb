@@ -18,12 +18,11 @@ Shelter.create(name: "Pets4Life", description: "simply worth it", address: "Manc
 Shelter.create(name: "Chat Noir", description: "don't pet them", address: "Paris")
 Shelter.create(name: "Municipal Shelter", description: "come and choose", address: "Dublin")
 
-Pet.create!(name: "Tom", species: "cat", shelter_id: 1, user_id: 4, food_level: 100, satisfaction: 100, boredom: 0 )
 User.destroy_all
 user = User.create(name: "Ana", username: "ana", email: "ana@gmail.com", password: "123456", password_confirmation: "123456")
 user2 = User.create(name: "Lucia", username: "Lucia", email: "lucia@gmail.com", password: "123456", password_confirmation: "123456")
 
-Pet.create!(name: "Tom", species: "cat", shelter_id: 1, user_id: 4, food_level: 100, satisfaction: 100, boredom: 0 )
+Pet.create!(name: "Tom", species: "cat", shelter_id: 1, user: user, food_level: 100, satisfaction: 100, boredom: 0 )
 
 
 Chatroom.destroy_all
