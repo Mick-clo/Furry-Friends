@@ -15,6 +15,7 @@
     background-color: #e6e6e6; /* Light grey background */
     position: relative;
     margin: 0 auto; /* Centers the circle */
+    
 
     /* Creates the inner text styling */
     &:after {
@@ -26,6 +27,7 @@
       font-size: 20px;
       color: #333;
     }
+
   }
 }
 
@@ -70,36 +72,6 @@
   text-align: center; /* Center the buttons */
   margin-top: 20px ; /* Add space above the button group */
 
-  .secondry-button {
-    display: inline-block;
-    margin-right: 10px;
-    /* Add more styling for  buttons */
-  }
-}
-
-
-
-.secondary-button {
-  background-color: transparent; /* Transparent background */
-  border: none; /* Remove border */
-  color: #000; /* Button text color */
-  font-weight: bold; /* Make the text bold */
-  margin: 0 10px; /* Add horizontal space between buttons */
-  padding: 10px 20px; /* Padding inside the buttons */
-  text-decoration: none; /* Remove underline from text */
-  display: inline-block; /* Align buttons in a row */
-  position: relative; /* Needed for the positioning of the pseudo-element */
-}
-
-.secondary-button:before {
- 
-  position: absolute;
-  left: 0px; /* Position the plus sign to the left of the button text */
-  color: #000; /* Plus sign color */
-}
-
-.secondary-button:hover {
-  background-color: #f0f0f0; /* Slight background on hover for feedback */
 }
  .message{
   align-self: center;

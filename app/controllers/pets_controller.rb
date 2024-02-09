@@ -25,12 +25,12 @@ class PetsController < ApplicationController
   end
 
   def play
-    change_levels(0, 15, -10)
+    change_levels(0, 5, -10)
     redirect_to @pet, notice: 'Pet played with!'
   end
 
   def care
-    change_levels(0, 10, -5)
+    change_levels(0, 0, -5)
     @pet.health = [@pet.health + 10, 100].min
     @pet.save
     redirect_to @pet, notice: 'Pet cared for!'
