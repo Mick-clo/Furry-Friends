@@ -9,5 +9,15 @@
 #   end
 User.destroy_all
 user = User.create(name: "Ana", username: "ana", email: "ana@gmail.com", password: "123456", password_confirmation: "123456")
+user2 = User.create(name: "Lucia", username: "Lucia", email: "lucia@gmail.com", password: "123456", password_confirmation: "123456")
 shelter = Shelter.create(name: "doggos", description: "awesome doggos", address: "Lisbon")
 Pet.create!(name: "Tom", species: "cat", shelter_id: shelter.id, user_id: user.id, food_level: 100, satisfaction: 100, boredom: 0 )
+
+
+Chatroom.destroy_all
+room1 = Chatroom.create(name: "general")
+room2 = Chatroom.create(name: "cats")
+room3 = Chatroom.create(name: "dogs")
+
+Message.create!(content: "Hey! I found a cat, help me !", chatroom: room2, user: user)
+Message.create!(content: "Hey! I can help you!", chatroom: room2, user: user2)
