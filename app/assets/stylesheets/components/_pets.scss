@@ -92,7 +92,7 @@
 //}
 
 .secondary-button:before {
-  content: '+'; /* Add the plus sign */
+  content: ''; /* Add the plus sign */
   position: absolute;
   left: 0px; /* Position the plus sign to the left of the button text */
   color: #000; /* Plus sign color */

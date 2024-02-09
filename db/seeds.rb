@@ -7,7 +7,16 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
-User.destroy_all
-user = User.create(name: "Ana", username: "ana", email: "ana@gmail.com", password: "123456", password_confirmation: "123456")
-shelter = Shelter.create(name: "doggos", description: "awesome doggos", address: "Lisbon")
-Pet.create!(name: "Tom", species: "cat", shelter_id: shelter.id, user_id: user.id, food_level: 100, satisfaction: 100, boredom: 0 )
+# User.destroy_all
+User.create(name: "Ana", username: "ana", email: "ana@gmail.com", password: "123456", password_confirmation: "123456")
+
+
+
+Shelter.create(name: "Cachorro", description: "awesome doggos", address: "Lisbon")
+Shelter.create(name: "Cani&Gatti", description: "Smart and cute", address: "Brescia")
+Shelter.create(name: "Hauskatze", description: "Fluffy but evilish", address: "Leipzig")
+Shelter.create(name: "Pets4Life", description: "simply worth it", address: "Manchester")
+Shelter.create(name: "Chat Noir", description: "don't pet them", address: "Paris")
+Shelter.create(name: "Municipal Shelter", description: "come and choose", address: "Dublin")
+
+Pet.create!(name: "Tom", species: "cat", shelter_id: 1, user_id: 4, food_level: 100, satisfaction: 100, boredom: 0 )

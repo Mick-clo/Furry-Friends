@@ -6,10 +6,14 @@ class PetsController < ApplicationController
 
   def new
     @pet = Pet.new
+    @shelter = Shelter.find(params[:shelter_id])
   end
 
   def create
+    @shelter = Shelter.find(params[:shelter_id])
     @pet = Pet.new(pet_params)
+    @pet.user = current_user
+    @pet.shelter = @shelter
     if @pet.save
       redirect_to @pet
     else

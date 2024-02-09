@@ -10,4 +10,11 @@
   text-align: center;
   font-family: 'Montserrat', sans-serif;
   text-align: center;
+  a {
+    text-decoration: none;
+  }
+}
+
+.modal-footer.tertiary-button a {
+  text-decoration: none;
 }

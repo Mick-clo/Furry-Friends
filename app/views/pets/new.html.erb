@@ -4,7 +4,7 @@
   <div class="d-flex justify-content-center py-5">
     <h1>Let's adopt a virtual pet!</h1>
   </div>
-  <%= simple_form_for @pet, defaults: { label: false } do |f| %>
+  <%= simple_form_for [@shelter, @pet], defaults: { label: false } do |f| %>
   <div class="d-flex pet-form p-2">
     <i class="fa-solid fa-paw p-2"></i>
     <h5 class="p-2"> Choose your pet: </h5>

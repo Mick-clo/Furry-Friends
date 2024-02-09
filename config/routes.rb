@@ -14,7 +14,9 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
-  resources :shelters, only: [:index, :show]
+  resources :shelters, only: [:index, :show] do
+    resources :pets, only: [:new, :create]
+  end
   resources :pages do
     collection do
       get 'dashboard'
@@ -24,7 +26,7 @@ Rails.application.routes.draw do
 
     resources :messages, only: :create
   end
-  resources :pets, only: [:show, :new, :create] do
+  resources :pets, only: [:show] do
     member do
       post 'feed'
       post 'play'
