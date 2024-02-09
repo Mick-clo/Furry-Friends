@@ -1,33 +1,46 @@
 
 <div class="pet-name"><h2><%= @pet.name %></h2></div>
 <div class="pet-display">
+  <div class="pet-status">
+    <div class="status-item">
+      <p>Satisfaction</p>
+      <div class="progress-circle" data-percentage="<%= @pet.satisfaction %>"></div>
+    </div>
+    <div class="status-item">
 
-  <div class="pet-image"><!--  add an image tag to display the pet's image --></div>
-
-
-<div class="pet-status">
-
-  <div class="status-item">
-    <p>Satisfication</p>
-    <div class="progress-circle" data-percentage="<%= @pet.satisfication %>"></div>
+      <p>Food Level</p>
+      <div class="progress-circle" data-percentage="<%= @pet.food_level %>"></div>
+    </div>
+    <div class="status-item">
+      <p>Health</p>
+      <div class="progress-circle" data-percentage="<%= @pet.health %>"></div>
+    </div>
+    <div class="status-item">
+      <p>Boredom</p>
+      <div class="progress-circle" data-percentage="<%= @pet.boredom %>"></div>
+    </div>
   </div>
-
-  <div class="status-item">
-    <p>Food Level</p>
-    <div class="progress-circle" data-percentage="<%= @pet.food_level %>"></div>
-  </div>
-
-  <div class="status-item">
-    <p>Boredom</p>
-    <div class="progress-circle" data-percentage="<%= @pet.boredem %>"></div>
-  </div>
+ <div class="pet-image"><script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script><lottie-player src="https://lottie.host/c0e5caa8-db9d-4f55-b0e1-b3ca541f30db/f4TNwRO2Ub.json" background="#FFFFFF" speed="1" style="width: 300px; height: 300px" loop  autoplay direction="1" mode="normal"></lottie-player></div>
+  <div class="message">
+    <p>
+      <% if @pet.satisfaction == 100 %>
+        It's great, I am happy!
+      <% elsif @pet.satisfaction >= 75 %>
+        I'm pretty content!
+      <% elsif @pet.satisfaction >= 50 %>
+        I'm okay, could be better.
+      <% elsif @pet.satisfaction >= 25 %>
+        I'm feeling a bit low.
+      <% else %>
+        I'm really sad, please cheer me up!
+      <% end %>
+    </p></div>
 </div>
 
-<div class="message"> <p>Some message here</p></div>
-</div>
 
-<div class="pet-actions">
-  <%= button_to 'Buy food', feed_pet_path(@pet), method: :post, class: "action-button" %>
-  <%= button_to 'Buy a new toy', play_pet_path(@pet), method: :post, class: "action-button" %>
-  <%= button_to 'Medical care', care_pet_path(@pet), method: :post, class: "action-button" %>
+
+<div class="pet-actions ">
+  <%= button_to 'Buy food', feed_pet_path(@pet), method: :post, class: "secondary-button m-2" %>
+  <%= button_to 'Buy a new toy', play_pet_path(@pet), method: :post, class: "secondary-button m-2" %>
+  <%= button_to 'Medical care', care_pet_path(@pet), method: :post, class: "secondary-button m-2" %>
 </div>

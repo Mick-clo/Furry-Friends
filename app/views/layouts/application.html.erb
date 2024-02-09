@@ -26,7 +26,10 @@
   <div class="page-container">
 
   <div class="navbar-container"><%= render "layouts/navbar" %></div>
-  <div class="content-container"><%= yield %></div>
+
+  <div class="content-container">
+   <%= render "shared/flashes" %>
+  <%= yield %></div>
 
   <%if @footer%>
     <br>
@@ -34,4 +37,5 @@
     </div>
   <%end%>
   </body>
+  </div>
 </html>
