@@ -79,17 +79,17 @@
 
 
 
-.secondary-button {
-  background-color: transparent; /* Transparent background */
-  border: none; /* Remove border */
-  color: #000; /* Button text color */
-  font-weight: bold; /* Make the text bold */
-  margin: 0 10px; /* Add horizontal space between buttons */
-  padding: 10px 20px; /* Padding inside the buttons */
-  text-decoration: none; /* Remove underline from text */
-  display: inline-block; /* Align buttons in a row */
-  position: relative; /* Needed for the positioning of the pseudo-element */
-}
+// .secondary-button {
+//  background-color: transparent; /* Transparent background */
+//  border: none; /* Remove border */
+//  color: #000; /* Button text color */
+//  font-weight: bold; /* Make the text bold */
+//  margin: 0 10px; /* Add horizontal space between buttons */
+//  padding: 10px 20px; /* Padding inside the buttons */
+//  text-decoration: none; /* Remove underline from text */
+//  display: inline-block; /* Align buttons in a row */
+//  position: relative; /* Needed for the positioning of the pseudo-element */
+//}
 
 .secondary-button:before {
   content: '+'; /* Add the plus sign */
