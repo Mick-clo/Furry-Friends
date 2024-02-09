@@ -12,9 +12,15 @@
 }
 
 .sender-style {
-  background-color: lightcoral;
+
+background: #FDC354;
+background: linear-gradient(135deg, #7D56FE, #A047FA);
+  color: rgb(255, 255, 255); /* Text color for sender messages */
+  align-self: flex-end; /* Align sender messages to the right */
 }
 
 .receiver-style {
-  background-color: lightblue;
+  background-color: rgb(162, 163, 164);
+  color:rgb(32, 32, 32);
+  align-self: flex-start; /* Align receiver messages to the left */
 }
