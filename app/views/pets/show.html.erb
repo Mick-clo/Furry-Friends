@@ -7,31 +7,13 @@
       <div class="progress-circle" data-percentage="<%= @pet.satisfaction %>"></div>
     </div>
     <div class="status-item">
+
       <p>Food Level</p>
-
-  <div class="pet-image"><!--  add an image tag to display the pet's image --></div>
-
-
-<div class="pet-status">
-
-  <div class="status-item">
-    <p>Satisfication</p>
-    <div class="progress-circle" data-percentage="<%= @pet.satisfaction %>"></div>
-  </div>
-
-  <div class="status-item">
-    <p>Food Level</p>
-    <div class="progress-circle" data-percentage="<%= @pet.food_level %>"></div>
-  </div>
-
-  <div class="status-item">
-    <p>Boredom</p>
-    <div class="progress-circle" data-percentage="<%= @pet.boredom %>"></div>
-  </div>
-</div>
-
-<div class="message"> <p>Some message here</p></div>
       <div class="progress-circle" data-percentage="<%= @pet.food_level %>"></div>
+    </div>
+    <div class="status-item">
+      <p>Health</p>
+      <div class="progress-circle" data-percentage="<%= @pet.health %>"></div>
     </div>
     <div class="status-item">
       <p>Boredom</p>
@@ -55,8 +37,8 @@
     </p></div>
 </div>
 
-<div class="pet-actions">
-  <%= button_to 'Buy food', feed_pet_path(@pet), method: :post, class: "secondary-button" %>
-  <%= button_to 'Buy a new toy', play_pet_path(@pet), method: :post, class: "secondary-button" %>
-  <%= button_to 'Medical care', care_pet_path(@pet), method: :post, class: "secondary-button" %>
+<div class="pet-actions ">
+  <%= button_to 'Buy food', feed_pet_path(@pet), method: :post, class: "secondary-button m-2" %>
+  <%= button_to 'Buy a new toy', play_pet_path(@pet), method: :post, class: "secondary-button m-2" %>
+  <%= button_to 'Medical care', care_pet_path(@pet), method: :post, class: "secondary-button m-2" %>
 </div>
