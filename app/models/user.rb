@@ -23,4 +23,8 @@ class User < ApplicationRecord
       'puppy-test.jpg'
     end
   end
+
+  # def accumulated_donations
+  #  orders.map { |order| order.item.price }.sum
+  # end
 end

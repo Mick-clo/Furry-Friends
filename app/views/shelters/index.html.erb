@@ -5,7 +5,7 @@
 
 <br>
 <br>
-<div class="d-flex flex-wrap">
+<div class="d-flex justify-content-center flex-wrap">
   <% @shelters.each do |shelter| %>
     <div class="card-shelter">
       <div class="card-shelter-infos">
@@ -14,7 +14,7 @@
         <em> <%= shelter.address %></em>
         <p> <%= shelter.description %> </p>
         <div class="d-flex">
-          <div class="p-2"><%= link_to "Donate", "#" %></div>
+          <div class="p-2"><%= link_to "Donate", new_shelter_pet_path(shelter) %></div>
           <div class="p-2"><%= link_to "more info", "#" %></div>
         </div>
       </div>
