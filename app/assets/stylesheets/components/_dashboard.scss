@@ -1,20 +1,160 @@
 .title{
   text-align: center;
+  padding: 20px;
+}
+
+.secondary-title{
+  text-align: center;
   padding: 16px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  h2{
+    min-width: 20%;
+  }
+}
+
+.container-first{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 20px;
+  align-items: center;
 }
 
 .your-pet{
   text-align: center;
   padding: 16px;
   display: flex;
+  align-items: center;
   flex-direction: column;
   justify-content: center;
   width: 160px;
 }
 
 .pet-picture{
-  width: 100px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
   padding: 10px;
-  
+  object-fit: cover;
+}
+
+.pet-stats{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.pet-status{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px;
+}
+.status-item{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+
+  p {
+    margin: 0;
+  }
+}
+
+.donut {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+  text-align: center;
+	width: 115px;
+	height: 115px;
+	border-radius: 50%;
+}
+
+.donut__gap {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100px;
+	height: 100px;
+	background: #fff;
+	border-radius: 50%;
+
+  & .p{
+    justify-content: center;
+  }
+}
+
+.message {
+  display: flex;
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 464px;
+  max-height: 280px;
+  text-align: center;
+
+  h3{
+    padding: 10px;
+    font-size: 20px;
+  }
+
+}
+
+.container-second{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px;
+  align-items: center;
+}
+
+.rank-table{
+  display: flex;
+  flex-direction: column;
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  margin-top: 20px;
+  margin-right: 10px;
+  width: 800px;
+
+  h2{
+    padding: 10px;
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #f0f0f0;
+  padding: 10px;
+  border-radius: 8px;
+  max-width: 300px;
+  border: none;
+  margin: 10px;
+}
+
+.card-icon {
+  margin: 10px;
+  font-size: 40px;
+  color: #e45e05;
+  padding: 8px;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-title {
+  font-weight: bold;
+  color: #333;
 }
