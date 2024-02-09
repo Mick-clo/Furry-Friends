@@ -5,3 +5,5 @@ import "@popperjs/core"
 import "bootstrap"
 // import "@fortawesome/fontawesome-free/css/all.css";
 import "@rails/actioncable"
+//= require d3
+
