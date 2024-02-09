@@ -1,32 +1,137 @@
+
 <div class="container">
   <h1 class="title">Hey <%=@user.username%></h1>
-  <div class="pet-stats">
-    <div class="your-pet">
-      <h2>Your pet</h2>
-      <%= image_tag @user.picture_url, class:"pet-picture"%>
-      <%= @pets.name%>
+  <div class="secondary-title">
+    <h2>Your pet</h2>
+  </div>
+  <div class="container-first">
+    <div class="pet-stats">
+      <% @pets.each do |pet|%>
+      <div class="your-pet">
+        <%= image_tag @user.picture_url, class:"pet-picture"%>
+        <%= pet.name%>
+      </div>
+      <div class="pet-status">
+        <div class="status-item">
+          <div id="satisfaction-donut" class="donut" style="<%="background: conic-gradient(#D9D9D9 #{pet.satisfaction}%, #fff 0 100%);"%>">
+          <div class="donut__gap"><p align="center">Satisfaction <%=pet.satisfaction%>%</p></div>
+          </div>
+        </div>
+
+        <div class="status-item">
+          <div class="donut" style="<%="background: conic-gradient(#D9D9D9 #{pet.food_level}%, #fff 0 100%);"%>">
+          <div class="donut__gap"><p align="center">Food Level <br><%=pet.food_level%>%</p></div>
+          </div>
+        </div>
+
+        <div class="status-item">
+          <div class="donut" style="<%="background: conic-gradient(#D9D9D9 #{pet.boredom}%, #fff 0 100%);"%>">
+          <div class="donut__gap"><p align="center">Boredom <br><%=pet.boredom%>%</p></div>
+          </div>
+        </div>
+
+        <div class="status-item">
+          <div class="donut" style="<%="background: conic-gradient(#D9D9D9 #{pet.health}%, #fff 0 100%);"%>">
+          <div class="donut__gap"><p align="center">Health <br><%=pet.health%>%</p></div>
+          </div>
+        </div>
+        <%end%>
+      </div>
     </div>
-    <div class="pet-status">
-      <div class="status-item">
-        <p>Satisfaction</p>
-        <div class="progress-circle" data-percentage="<%=%>"></div>
-      </div>
+    <div class="message">
+      <h3><%= @random_message %></h3>
+    </div>
+  </div>
 
-      <div class="status-item">
-        <p>Food Level</p>
-        <div class="progress-circle" data-percentage="<%= %>"></div>
+  <div class="container-second">
+    <div class="rank-table">
+      <h2>Top donations of the month</h2>
+      <table>
+        <tr>
+          <th>Place</th>
+          <th>Pet owner</th>
+          <th>Pet satisfaction level</th>
+          <th>Donated amount</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>John Winter</td>
+          <td>98%</td>
+          <td>$100.00</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Jane Smith</td>
+          <td>95%</td>
+          <td>$75.00</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Michael Brown</td>
+          <td>92%</td>
+          <td>$50.00</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>Sarah Jones</td>
+          <td>89%</td>
+          <td>$25.00</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>David Miller</td>
+          <td>85%</td>
+          <td>$15.00</td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td>Emma Garcia</td>
+          <td>82%</td>
+          <td>$10.00</td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td>Charles Rodriguez</td>
+          <td>78%</td>
+          <td>$5.00</td>
+        </tr>
+        <tr>
+          <td>8</td></td>
+          <td>Maria Gonzalez</td>
+          <td>75%</td>
+          <td>$3.00</td>
+        </tr>
+        <tr>
+          <td>9</td></td>
+          <td>Daniel Hernandez</td>
+          <td>72%</td>
+          <td>$2.00</td>
+        </tr>
+        <tr>
+          <td>10</td></td>
+          <td>Isabella Lopez</td>
+          <td>70%</td>
+          <td>$1.00</td>
+        </tr>
+      </table>
+    </div>
+    <div class="card">
+      <div class="card-icon">
+        <i class="fas fa-hand-holding-usd"></i>
       </div>
-
-      <div class="status-item">
-        <p>Boredom</p>
-        <div class="progress-circle" data-percentage="<%=%>"></div>
-      </div>
-
-      <div class="status-item">
-        <p>Health</p>
-        <div class="progress-circle" data-percentage="<%= %>"></div>
+      <div class="card-content">
+        <h2 class="card-title">Donated Amount</h2>
+        <h5 class="card-number"> 25$ </h5>
       </div>
     </div>
-</div>
+    <div class="card">
+      <div class="card-icon">
+        <i class="fas fa-arrow-up"></i>
+      </div>
+      <div class="card-content">
+        <h2 class="card-title">Place in the rank</h2>
+        <h5 class="card-number"> 4 </h5>
+      </div>
+    </div>
   </div>
 </div>
