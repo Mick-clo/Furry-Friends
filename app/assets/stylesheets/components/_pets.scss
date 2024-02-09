@@ -33,7 +33,6 @@
 .pet-display {
   display: flex;
   justify-content: space-between;
-  /*background-color: #f0f0f0;  A light grey background */
   border-radius: 10px; /* Rounded corners */
   padding: 20px; /* Space inside the border */
   margin: 20px auto; /* Center the display and add space around it */
@@ -53,13 +52,14 @@
   }
 
   .pet-image {
-    align-items: center;
+    align-self: center; /* Centers the image and adds space below */
+    justify-self: center;
+
     display: block; /* Ensures the image is a block-level element */
-    width: 150px; /* Width of the image */
-    height: 150px; /* Height of the image */
+    width: 350px; /* Width of the image */
+    height: 350px; /* Height of the image */
     object-fit: cover; /* Ensures the image covers the area without being stretched */
     border-radius: 50%; /* Makes the image circular */
-    margin: 0 auto 1em; /* Centers the image and adds space below */
   }
 }
 
@@ -92,7 +92,7 @@
 }
 
 .secondary-button:before {
-  content: '+'; /* Add the plus sign */
+ 
   position: absolute;
   left: 0px; /* Position the plus sign to the left of the button text */
   color: #000; /* Plus sign color */
@@ -106,5 +106,5 @@
   justify-self: center;
   color: #000;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  font-size: large;
+  font-size:larger ;
  }

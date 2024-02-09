@@ -2,6 +2,8 @@ class PetsController < ApplicationController
   before_action :set_pet, only:[:show, :feed, :play, :care]
 
   def show
+    # passive_decrease
+    # @pet.save
   end
 
   def new
@@ -18,17 +20,19 @@ class PetsController < ApplicationController
   end
 
   def feed
-    @pet.update(food_level: [@pet.food_level + 20, 100].min)
+    change_levels(20, 5, -5)
     redirect_to @pet, notice: 'Pet fed!'
   end
 
   def play
-    @pet.update(satisfaction: [@pet.satisfaction + 20, 100].min, boredom: [@pet.boredom - 20, 0].max)
+    change_levels(0, 15, -10)
     redirect_to @pet, notice: 'Pet played with!'
   end
 
   def care
-    @pet.update(satisfaction: [@pet.satisfaction + 10, 100].min)
+    change_levels(0, 10, -5)
+    @pet.health = [@pet.health + 10, 100].min
+    @pet.save
     redirect_to @pet, notice: 'Pet cared for!'
   end
 
@@ -41,4 +45,19 @@ class PetsController < ApplicationController
   def pet_params
     params.require(:pet).permit(:name, :species)
   end
+
+  # Method to change levels for feed, play, and care actions
+  def change_levels(food, satisfaction, boredom)
+    @pet.food_level = [@pet.food_level + food, 100].min
+    @pet.satisfaction = [[@pet.satisfaction + satisfaction, 10].max, 100].min
+    @pet.boredom = [[@pet.boredom + boredom, 0].max, 100].min
+    @pet.save
+  end
+
+  # Method to passively decrease satisfaction and increase boredom
+  # def passive_decrease
+   # @pet.food_level = [@pet.food_level - 1, 0].max
+    #@pet.satisfaction = [[@pet.satisfaction - 1, 10].max, 100].min
+   # @pet.boredom = [@pet.boredom + 1, 100].min
+ # end
 end
