@@ -4,6 +4,7 @@ class PetsController < ApplicationController
   def show
     # passive_decrease
     # @pet.save
+    render footer: false
   end
 
   def new
@@ -21,19 +22,19 @@ class PetsController < ApplicationController
 
   def feed
     change_levels(20, 5, -5)
-    redirect_to @pet, notice: 'Pet fed!'
+    redirect_to @pet, notice: 'Thank you for your 5$ donation!'
   end
 
   def play
     change_levels(0, 5, -10)
-    redirect_to @pet, notice: 'Pet played with!'
+    redirect_to @pet, notice: 'Thank you for your 5$ donation!'
   end
 
   def care
     change_levels(0, 0, -5)
     @pet.health = [@pet.health + 10, 100].min
     @pet.save
-    redirect_to @pet, notice: 'Pet cared for!'
+    redirect_to @pet, notice: 'Thank you for your 5$ donation!'
   end
 
   private
