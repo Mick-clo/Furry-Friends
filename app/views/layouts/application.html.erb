@@ -25,9 +25,16 @@
   <div class="page-container">
 
   <div class="navbar-container"><%= render "layouts/navbar" %></div>
-  <div class="content-container"><%= yield %></div>
+
+  <div class="content-container">
+   <%= render "shared/flashes" %>
+  <%= yield %></div>
 
   <br>
-  <div class="footer-container"><%= render "layouts/footer" %></div>
+<% unless controller_name == "pets" && action_name == "show" %>
+ <div class="footer-container"><%= render "layouts/footer" %></div>
+<% end %>
+
   </body>
+  </div>
 </html>
