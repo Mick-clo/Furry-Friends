@@ -1,25 +1,32 @@
-<div class="d-flex flex-column justify-content-center width: 75%;">
+<div class="container d-flex m-auto">
+<div class="d-flex create-pet-container flex-column justify-content-center align-self-center m-auto">
 
-  <div class="d-flex justify-content-center py-5  max-width: 100%;">
+  <div class="d-flex justify-content-center py-5">
     <h1>Let's adopt a virtual pet!</h1>
   </div>
   <%= simple_form_for @pet, defaults: { label: false } do |f| %>
-  <div class="d-flex justify-content-around p-2">
-    <i class="fa-solid fa-circle-plus"></i>
-    <h5> Choose your pet: </h5>
-    <%= f.input_field :species, as: :radio_buttons, collection: [['0', 'Dog'], ['1', 'Cat']], label_method: :second, value_method: :first %>
+  <div class="d-flex pet-form p-2">
+    <i class="fa-solid fa-paw p-2"></i>
+    <h5 class="p-2"> Choose your pet: </h5>
+    <%= f.input_field :species, as: :radio_buttons,
+      collection: [['0', (image_tag "shiba 1.png", alt: "Dog", class:"photo-pet")], ['1', (image_tag "blackCat 1.png", alt: "Cat", class:"photo-pet")]], label_method: :second,
+      value_method: :first %>
   </div>
 
-  <div class="d-flex justify-content-around p-2">
-    <i class="fa-solid fa-circle-plus"></i>
-    <h5> Choose a name: </h5>
-    <%= f.input :name,
-    error: 'A name is mandatory, please specify one',
-    input_html: { maxlength: 20 } %>
+  <div class="d-flex p-2 pet-form">
+    <i class="fa-solid fa-paw p-2"></i>
+    <h5 class="p-2 pr-4"> Choose a name: </h5>
+    <div class="p-2 pet-name">
+      <%= f.input_field :name,
+        error: 'A name is mandatory, please specify one',
+        input_html: { maxlength: 20 } %>
+    </div>
   </div>
 
-  <div class="d-flex justify-content-center py-5">
+  <div class="d-flex justify-content-around align-items-center py-5">
+    <%= link_to "Back", shelters_path, class:"btn btn-outline-dark w-25" %>
     <button class="btn btn-outline-dark"><%= f.button :submit %></button>
   </div>
   <% end %>
+</div>
 </div>
