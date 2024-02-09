@@ -8,7 +8,6 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 # User.destroy_all
-User.create(name: "Ana", username: "ana", email: "ana@gmail.com", password: "123456", password_confirmation: "123456")
 
 
 
@@ -20,3 +19,17 @@ Shelter.create(name: "Chat Noir", description: "don't pet them", address: "Paris
 Shelter.create(name: "Municipal Shelter", description: "come and choose", address: "Dublin")
 
 Pet.create!(name: "Tom", species: "cat", shelter_id: 1, user_id: 4, food_level: 100, satisfaction: 100, boredom: 0 )
+User.destroy_all
+user = User.create(name: "Ana", username: "ana", email: "ana@gmail.com", password: "123456", password_confirmation: "123456")
+user2 = User.create(name: "Lucia", username: "Lucia", email: "lucia@gmail.com", password: "123456", password_confirmation: "123456")
+
+Pet.create!(name: "Tom", species: "cat", shelter_id: 1, user_id: 4, food_level: 100, satisfaction: 100, boredom: 0 )
+
+
+Chatroom.destroy_all
+room1 = Chatroom.create(name: "general")
+room2 = Chatroom.create(name: "cats")
+room3 = Chatroom.create(name: "dogs")
+
+Message.create!(content: "Hey! I found a cat, help me !", chatroom: room2, user: user)
+Message.create!(content: "Hey! I can help you!", chatroom: room2, user: user2)
