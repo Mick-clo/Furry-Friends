@@ -26,9 +26,9 @@ Pet.create!(name: "Tom", species: "cat", shelter_id: 1, user: user, food_level: 
 
 
 Chatroom.destroy_all
-room1 = Chatroom.create(name: "general")
-room2 = Chatroom.create(name: "cats")
-room3 = Chatroom.create(name: "dogs")
+room1 = Chatroom.create(name: "general😎")
+room2 = Chatroom.create(name: "cats😺")
+room3 = Chatroom.create(name: "dogs🐶")
 
 Message.create!(content: "Hey! I found a cat, help me !", chatroom: room2, user: user)
 Message.create!(content: "Hey! I can help you!", chatroom: room2, user: user2)
