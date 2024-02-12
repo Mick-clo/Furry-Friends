@@ -3,7 +3,8 @@ class User < ApplicationRecord
   has_many :messages, dependent: :destroy
   has_many :pets, dependent: :destroy
   has_one_attached :avatar
-  has_many :orders, through: :pets
+
+  has_many :orders, through: :pets, dependent: :destroy
   validates :username, presence: true
   # validates :satisfaction, presence: true, numericality: { only_integer: true }
   # Include default devise modules. Others available are:

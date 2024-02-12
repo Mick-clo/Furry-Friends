@@ -33,4 +33,7 @@ Rails.application.routes.draw do
     end
   end
   resources :users, only: [:update]
+  resources :orders, only: [:show, :create] do
+    resources :payments, only: :new
+  end
 end
