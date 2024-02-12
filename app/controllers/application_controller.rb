@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   before_action :footer_presence
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :username])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :username, :avatar])
   end
 
   def footer_presence

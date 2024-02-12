@@ -9,6 +9,7 @@
         <%= f.input :name,
                     required: true,
                     input_html: { autocomplete: "Full name" }%>
+        <%= f.input :avatar, as: :file %>
         <%= f.input :username,
                     required: true,
                     autofocus: true,
