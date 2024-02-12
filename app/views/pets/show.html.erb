@@ -39,8 +39,68 @@
 
 
 
-<div class="pet-actions ">
-  <%= button_to 'Buy food', feed_pet_path(@pet), method: :post, class: "secondary-button m-2" %>
-  <%= button_to 'Buy a new toy', play_pet_path(@pet), method: :post, class: "secondary-button m-2" %>
-  <%= button_to 'Medical care', care_pet_path(@pet), method: :post, class: "secondary-button m-2" %>
+<div class="pet-actions " data-controller="donation">
+  <div class="food-items">
+    <button class="secondary-button m-2" data-action="click->donation#openCards">Buy food</button>
+
+    <div data-donation-target="foodItems" class="d-none">
+
+      <% @food_items.each do |item| %>
+
+        <div class="card-product">
+          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+          <div class="card-product-infos">
+            <h2> <%= item.name %> </h2>
+            <p> Donate <strong><%= humanized_money_with_symbol(item.price) %> - </strong> <%= item.description %> </p>
+            <% if item.price == 0 %>
+              <%= button_to 'Donate!', feed_pet_path(@pet), method: :post, class: "secondary-button m-2" %>
+            <% else %>
+              <%= render 'pets/form', item: item, pet: @pet %>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+
+    </div>
+  </div>
+
+  <div class="toy-items">
+    <button class="secondary-button m-2" data-action="click->donation#openCards">Buy a new toy</button>
+    <div data-donation-target="toyItems" class="d-none">
+
+      <% @toy_items.each do |item| %>
+
+        <div class="card-product">
+          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+          <div class="card-product-infos">
+            <h2> <%= item.name %> </h2>
+            <p> Donate <strong> <%= item.price %> </strong> <%= item.description %> </p>
+            <%= button_to 'Buy a new toy', play_pet_path(@pet), method: :post, class: "secondary-button m-2" %>
+          </div>
+        </div>
+      <% end %>
+
+    </div>
+  </div>
+
+   <div class="medical-items">
+    <button class="secondary-button m-2" data-action="click->donation#openCards">Medical care</button>
+    <div data-donation-target="medicalItems" class="d-none">
+
+      <% @medical_items.each do |item| %>
+
+        <div class="card-product">
+          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+          <div class="card-product-infos">
+            <h2> <%= item.name %> </h2>
+            <p> Donate <strong> <%= humanized_money_with_symbol(item.price) %> - </strong> <%= item.description %> </p>
+            <%= button_to 'Medical care', care_pet_path(@pet), method: :post, class: "secondary-button m-2" %>
+          </div>
+        </div>
+      <% end %>
+
+    </div>
+  </div>
+
+
 </div>
