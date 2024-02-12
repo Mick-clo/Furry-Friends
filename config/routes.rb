@@ -32,4 +32,5 @@ Rails.application.routes.draw do
       post 'care'
     end
   end
+  get 'faqs', to: 'faqs#index'
 end

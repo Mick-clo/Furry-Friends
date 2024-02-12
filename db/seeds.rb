@@ -32,3 +32,5 @@ room3 = Chatroom.create(name: "dogs")
 
 Message.create!(content: "Hey! I found a cat, help me !", chatroom: room2, user: user)
 Message.create!(content: "Hey! I can help you!", chatroom: room2, user: user2)
+
+faq1 = Faq.create(question: "How can I adopt a pet from the Furry Friend ?", answer:"Thank you for opening your heart  to a pet! Visit our Adopt section for information on adopting Furry Friend dogs and cats in all ove the word." )
