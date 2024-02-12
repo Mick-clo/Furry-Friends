@@ -32,4 +32,5 @@ Rails.application.routes.draw do
       post 'care'
     end
   end
+  resources :users, only: [:update]
 end
