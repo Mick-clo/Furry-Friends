@@ -56,6 +56,8 @@ gem 'omniauth-google-oauth2'
 gem "omniauth-rails_csrf_protection"
 gem "sidekiq", "~> 6.5.5"
 gem "sidekiq-failures", "~> 1.0"
+gem 'money-rails'
+gem 'stripe'
 
 group :development, :test do
   gem "dotenv-rails"
