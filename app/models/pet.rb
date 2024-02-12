@@ -9,7 +9,7 @@ class Pet < ApplicationRecord
   belongs_to :user
   belongs_to :shelter
 
-  has_many :orders
+  has_many :orders, dependent: :destroy
   has_one_attached :picture
 
   before_create :set_default_levels

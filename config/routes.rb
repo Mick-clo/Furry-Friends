@@ -23,7 +23,6 @@ Rails.application.routes.draw do
     end
   end
   resources :chatrooms, only: [:show, :new, :create, :index] do
-
     resources :messages, only: :create
   end
   resources :pets, only: [:show] do
@@ -32,5 +31,8 @@ Rails.application.routes.draw do
       post 'play'
       post 'care'
     end
+  end
+  resources :orders, only: [:show, :create] do
+    resources :payments, only: :new
   end
 end
