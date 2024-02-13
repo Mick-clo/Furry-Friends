@@ -1,41 +1,54 @@
 
 <div class="container">
   <h1 class="title">Hey <%=@user.username%></h1>
+  <%= simple_form_for(@user) do |f| %>
+   <%= f.input :avatar, as: :file %>
+   <%= f.submit %>
+  <%end%>
   <div class="secondary-title">
-    <h2>Your pet</h2>
   </div>
   <div class="container-first">
-    <div class="pet-stats">
-      <% @pets.each do |pet|%>
-      <div class="your-pet">
-        <%= image_tag @user.picture_url, class:"pet-picture"%>
-        <%= pet.name%>
+    <div class="dropdown">
+      <a class="fa fa-chevron-circle-down" id="petDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Your pets</a>
+      <div class="dropdown-menu" aria-labelledby="petDropdown">
+        <% if @pets.length > 1 %>
+          <% @pets.each do |pet| %>
+            <a class="dropdown-item" href="/pages/dashboard?pet=<%= pet.id %>"><%= pet.name %></a>
+          <% end %>
+        <% else %>
+          <%= @pets.first.name %>
+        <% end %>
       </div>
-      <div class="pet-status">
-        <div class="status-item">
-          <div id="satisfaction-donut" class="donut" style="<%="background: conic-gradient(#D9D9D9 #{pet.satisfaction}%, #fff 0 100%);"%>">
-          <div class="donut__gap"><p align="center">Satisfaction <%=pet.satisfaction%>%</p></div>
-          </div>
+      <div class="pet-stats">
+        <div class="your-pet">
+          <%= image_tag @user.picture_url, class:"pet-picture"%>
+          <%= @pet.name%>
         </div>
+        <div class="pet-status">
+          <div class="status-item">
+            <div id="satisfaction-circle" class="donut" style="<%="background: conic-gradient(#e45e05 #{@pet.satisfaction}%, #fff 0 100%);"%>">
+            <div id="satisfaction-gap" class="donut__gap"><p align="center">Satisfaction <%=@pet.satisfaction%>%</p></div>
+            </div>
+          </div>
 
-        <div class="status-item">
-          <div class="donut" style="<%="background: conic-gradient(#D9D9D9 #{pet.food_level}%, #fff 0 100%);"%>">
-          <div class="donut__gap"><p align="center">Food Level <br><%=pet.food_level%>%</p></div>
+          <div class="status-item">
+            <div class="donut" style="<%="background: conic-gradient(#D9D9D9 #{@pet.food_level}%, #fff 0 100%);"%>">
+            <div class="donut__gap"><p align="center">Food Level <br><%=@pet.food_level%>%</p></div>
+            </div>
           </div>
-        </div>
 
-        <div class="status-item">
-          <div class="donut" style="<%="background: conic-gradient(#D9D9D9 #{pet.boredom}%, #fff 0 100%);"%>">
-          <div class="donut__gap"><p align="center">Boredom <br><%=pet.boredom%>%</p></div>
+          <div class="status-item">
+            <div class="donut" style="<%="background: conic-gradient(#D9D9D9 #{@pet.boredom}%, #fff 0 100%);"%>">
+            <div class="donut__gap"><p align="center">Boredom <br><%=@pet.boredom%>%</p></div>
+            </div>
           </div>
-        </div>
 
-        <div class="status-item">
-          <div class="donut" style="<%="background: conic-gradient(#D9D9D9 #{pet.health}%, #fff 0 100%);"%>">
-          <div class="donut__gap"><p align="center">Health <br><%=pet.health%>%</p></div>
+          <div class="status-item">
+            <div class="donut" style="<%="background: conic-gradient(#D9D9D9 #{@pet.health}%, #fff 0 100%);"%>">
+            <div class="donut__gap"><p align="center">Health <br><%=@pet.health%>%</p></div>
+            </div>
           </div>
         </div>
-        <%end%>
       </div>
     </div>
     <div class="message">
@@ -46,7 +59,7 @@
   <div class="container-second">
     <div class="rank-table">
       <h2>Top donations of the month</h2>
-      <table>
+      <table class="sryled-table">
         <tr>
           <th>Place</th>
           <th>Pet owner</th>
@@ -115,22 +128,32 @@
         </tr>
       </table>
     </div>
-    <div class="card">
-      <div class="card-icon">
-        <i class="fas fa-hand-holding-usd"></i>
+    <div class="container-right">
+      <div class="cards-right">
+        <div class="card">
+          <div class="card-icon">
+            <i class="fas fa-hand-holding-usd"></i>
+          </div>
+          <div class="card-content">
+            <h2 class="card-title">Donated Amount</h2>
+            <h5 class="card-number"> 25$ </h5>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-icon">
+            <i class="fas fa-arrow-up"></i>
+          </div>
+          <div class="card-content">
+            <h2 class="card-title">Place in the rank</h2>
+            <h5 class="card-number"> 4 </h5>
+          </div>
+        </div>
       </div>
-      <div class="card-content">
-        <h2 class="card-title">Donated Amount</h2>
-        <h5 class="card-number"> 25$ </h5>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-icon">
-        <i class="fas fa-arrow-up"></i>
-      </div>
-      <div class="card-content">
-        <h2 class="card-title">Place in the rank</h2>
-        <h5 class="card-number"> 4 </h5>
+      <div class="history">
+        <p>History</p>
+        <div class="activity-graph">
+
+       </div>
       </div>
     </div>
   </div>

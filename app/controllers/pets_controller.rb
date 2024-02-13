@@ -4,6 +4,9 @@ class PetsController < ApplicationController
   def show
     # passive_decrease
     # @pet.save
+    @food_items = Item.where(category: "food")
+    @toy_items = Item.where(category: "toy")
+    @medical_items = Item.where(category: "medical")
     render footer: false
   end
 
@@ -26,7 +29,7 @@ class PetsController < ApplicationController
 
   def feed
     change_levels(20, 5, -5)
-    redirect_to @pet, notice: 'Thank you for your 5$ donation!'
+    # redirect_to @pet, notice: 'Thank you for your 5$ donation!'
   end
 
   def play

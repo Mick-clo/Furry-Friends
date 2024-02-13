@@ -35,13 +35,14 @@
 
 .chatroom-main-container {
   gap: 3%;
+  background-color: rgb(248, 246, 246);
 }
 
 .sidebar {
   background-color: #ffffff;
   border-radius: 15px;
   border: none;
-  box-shadow: 0px 0px 8px rgba(0,0,0,0.2);
+  box-shadow: 0px 0px 8px rgba(0,0,0,0.1);
   width: 25%;
 
   .sidebar-content {
@@ -53,8 +54,22 @@
 textarea.form-control{
   padding:32px;
 
+  border-radius: 20px;
+
 }
 
 .message-box{
   margin-right:40px;
+  border-radius: 20px;
+  padding: 32px;
+}
+
+.sidebar-top{
+  display:flex;
+  flex-direction: column;
+}
+
+.messages-box{
+  border-radius: 20px;
+  box-shadow: 0px 0px 8px rgba(0,0,0,0.1);
 }

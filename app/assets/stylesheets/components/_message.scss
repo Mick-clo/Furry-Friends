@@ -12,7 +12,8 @@
 }
 
 .sender-style {
-
+border-radius: 20px;
+padding: 16px;
 background: #FDC354;
 background: linear-gradient(135deg, #7D56FE, #A047FA);
   color: rgb(255, 255, 255); /* Text color for sender messages */
@@ -20,7 +21,9 @@ background: linear-gradient(135deg, #7D56FE, #A047FA);
 }
 
 .receiver-style {
-  background-color: rgb(162, 163, 164);
+  border-radius: 20px;
+  padding: 16px;
+  background-color: #EAEFF5;
   color:rgb(32, 32, 32);
   align-self: flex-start; /* Align receiver messages to the left */
 }
