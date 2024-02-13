@@ -3,6 +3,9 @@ class SheltersController < ApplicationController
 
   def index
     @shelters = Shelter.all
+    if params[:address].present?
+      @shelters = @shelters.near(params[:address])
+    end
     @markers = @shelters.geocoded.map do |shelter|
       {
         lat: shelter.latitude,
