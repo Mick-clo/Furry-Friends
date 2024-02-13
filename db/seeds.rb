@@ -22,7 +22,7 @@ User.destroy_all
 user = User.create(name: "Ana", username: "ana", email: "ana@gmail.com", password: "123456", password_confirmation: "123456")
 user2 = User.create(name: "Lucia", username: "Lucia", email: "lucia@gmail.com", password: "123456", password_confirmation: "123456")
 
-
+Pet.destroy_all
 Pet.create!(name: "Tom", species: "cat", shelter: shelter, user: user, food_level: 100, satisfaction: 100, boredom: 0 )
 
 
