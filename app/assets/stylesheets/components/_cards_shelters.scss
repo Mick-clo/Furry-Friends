@@ -5,7 +5,6 @@
   height: 425px;
   border: 1px solid #ddd;
   border-radius: 5px;
-  overflow: hidden;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   margin: auto;
   padding:16px;
@@ -63,7 +62,9 @@
   margin-right: 8px;
 }
 
-
+.card-shelter-infos{
+  position: relative;
+}
 
 // .card-shelter-infos a {
 //   display: inline-block;
