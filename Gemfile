@@ -29,7 +29,7 @@ gem "stimulus-rails"
 gem "jbuilder"
 
 # Use Redis adapter to run Action Cable in production
-# gem "redis", ">= 4.0.1"
+gem "redis", ">= 4.0.1"
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
@@ -56,6 +56,9 @@ gem 'omniauth-google-oauth2'
 gem "omniauth-rails_csrf_protection"
 gem "sidekiq", "~> 6.5.5"
 gem "sidekiq-failures", "~> 1.0"
+gem "cloudinary"
+gem 'money-rails'
+gem 'stripe'
 
 group :development, :test do
   gem "dotenv-rails"
