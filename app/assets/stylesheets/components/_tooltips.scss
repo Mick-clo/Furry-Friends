@@ -2,13 +2,16 @@
 .hidetooltip.hidetooltip.hidetooltip + [role="tooltip"] {
   visibility: hidden;
   position: absolute;
-  top: 2rem;
-  left: 2rem;
+  min-width: 64px;
+  z-index: 20;
+  white-space: nowrap;
+  top: 16px;
+  left: 5px;
   background: black;
   color: white;
 }
 [aria-describedby]:hover, [aria-describedby]:focus {
-  position: relative;
+  visibility: visible;
 }
 [aria-describedby]:hover + [role="tooltip"], [aria-describedby]:focus + [role="tooltip"] {
   visibility: visible;
