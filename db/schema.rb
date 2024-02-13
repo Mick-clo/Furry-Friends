@@ -48,6 +48,13 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_12_145702) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "faqs", force: :cascade do |t|
+    t.string "question"
+    t.text "answer"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "items", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
