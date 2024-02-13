@@ -59,6 +59,8 @@ gem "sidekiq-failures", "~> 1.0"
 gem "cloudinary"
 gem 'money-rails'
 gem 'stripe'
+gem "chartkick"
+gem "groupdate"
 
 gem 'stripe_event'
 gem "rails_admin", "3.0"

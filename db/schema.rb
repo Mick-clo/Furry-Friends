@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_02_13_141848) do
+
+
+
+
+ActiveRecord::Schema[7.1].define(version: 2024_02_13_145555) do
+
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -82,6 +88,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_13_141848) do
     t.string "state"
     t.integer "amount_cents", default: 0, null: false
     t.string "checkout_session_id"
+    t.integer "euro"
     t.index ["item_id"], name: "index_orders_on_item_id"
     t.index ["pet_id"], name: "index_orders_on_pet_id"
   end
