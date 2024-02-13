@@ -139,7 +139,7 @@
             </div>
             <div class="card-content">
               <h2 class="card-title">Donated Amount</h2>
-              <h5 class="card-number"> 25$ </h5>
+              <h5 class="card-number"> <%= current_user.accumulated_donations %>€ </h5>
             </div>
           </div>
           <div class="card">
@@ -155,7 +155,11 @@
         <div class="history">
           <p>History</p>
           <div class="activity-graph">
-
+            <%= column_chart current_user.paid_orders.group_by_month(:created_at).sum(:euro),
+            min: 0, max: 30, width: "500px", height: "180px",
+            stacked: true, discrete: true, label: "Amount", prefix: "€",
+            decimal: ",", round: 2, zeros: true, loading: "Loading...",
+            empty: "No data", refresh: 320 %>
         </div>
         </div>
       </div>

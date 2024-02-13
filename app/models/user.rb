@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  require_relative 'pet'
+  # require_relative 'pet'
   has_many :messages, dependent: :destroy
   has_many :pets, dependent: :destroy
   has_one_attached :avatar
@@ -25,7 +25,11 @@ class User < ApplicationRecord
     end
   end
 
-  # def accumulated_donations
-  #  orders.map { |order| order.item.price }.sum
-  # end
+  def accumulated_donations
+    orders.map { |order| order.item.price if order.state == 'paid' }.sum
+  end
+
+  def paid_orders
+    orders.where(state: 'paid')
+  end
 end
