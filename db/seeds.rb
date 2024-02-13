@@ -34,6 +34,7 @@ Chatroom.create(name: "dogs")
 Message.create!(content: "Hey! I found a cat, help me !", chatroom: room2, user: user)
 Message.create!(content: "Hey! I can help you!", chatroom: room2, user: user2)
 
+
 Item.destroy_all
 Item.create!(name: "A cheap bag of wet food", price: 0, description: " Sometimes we can't afford better meals but we still want to sustain our loved ones.", category: "food")
 Item.create!(name: "Canned food", price: 5, description: " Meat's the need of your pet!.", category: "food")
@@ -46,3 +47,4 @@ Item.create!(name: "Puzzle feeder", price: 10, description: " Make them smarter!
 Item.create!(name: "One aspirin", price: 0, description: " And the pain goes away!", category: "medical")
 Item.create!(name: "A vaccination", price: 5, description: " For stronger maladies", category: "medical")
 Item.create!(name: "A complete health care treatment plan", price: 10, description: " It's not a critical situation, but I want the best for my beloved", category: "medical")
+

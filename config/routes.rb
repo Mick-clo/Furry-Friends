@@ -32,8 +32,12 @@ Rails.application.routes.draw do
       post 'care'
     end
   end
+
+  get 'faqs', to: 'pages#faq'
+
   resources :users, only: [:update]
   resources :orders, only: [:show, :create] do
     resources :payments, only: :new
   end
+
 end
