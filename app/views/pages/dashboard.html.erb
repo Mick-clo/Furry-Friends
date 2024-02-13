@@ -1,7 +1,7 @@
 <div class="container-dashboard">
   <div class="container">
     <div class="user-greeting">
-      <h1 class="title">Hey <%=@user.username%> <%=cl_image_tag current_user.avatar.key, class: "avatar-dashboard"%></h1>
+      
       <div data-controller="adding-button-for-profile-picture" class="update-button">
         <a data-action="click->adding-button-for-profile-picture#openModal" class=" icon fa-solid fa-pencil"></a>
         <div data-adding-button-for-profile-picture-target="modal" id="change_avatar" class="d-none"> <%= render "form_picture" %></div>
