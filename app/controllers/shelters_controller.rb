@@ -6,6 +6,11 @@ class SheltersController < ApplicationController
     @user = current_user
     @favourite_shelter = @user.pets
     
+
+    if params[:address].present?
+      @shelters = @shelters.near(params[:address])
+    end
+
     @markers = @shelters.geocoded.map do |shelter|
       {
         lat: shelter.latitude,

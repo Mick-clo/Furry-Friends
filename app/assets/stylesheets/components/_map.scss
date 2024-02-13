@@ -5,3 +5,25 @@
 .mapboxgl-popup-content {
   text-align: center;
 }
+
+.mapboxgl-ctrl-geocoder, .mapboxgl-ctrl{
+  width: 250px !important;
+  border-radius: 2em !important;
+  padding: 8px 16px !important;
+  margin-right: 20px !important;
+
+}
+
+
+.mapboxgl-ctrl-geocoder--input:focus,.mapboxgl-ctrl-geocoder--input {
+  max-width: 250px !important;
+  outline: none !important;
+  padding-left: 20px !important;
+  border-radius: 2em !important;
+
+
+}
+
+.mapboxgl-ctrl-geocoder--icon{
+  top:16px !important
+}
