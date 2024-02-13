@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   require "sidekiq/web"
   mount Sidekiq::Web => '/sidekiq'
-
+  # mount StripeEvent::Engine, at: '/stripe-webhooks'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
@@ -32,8 +32,12 @@ Rails.application.routes.draw do
       post 'care'
     end
   end
+
+  get 'faqs', to: 'pages#faq'
+
   resources :users, only: [:update]
   resources :orders, only: [:show, :create] do
     resources :payments, only: :new
   end
+
 end

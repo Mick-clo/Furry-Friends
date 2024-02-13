@@ -36,7 +36,7 @@ User.destroy_all
 user = User.create(name: "Ana", username: "ana", email: "ana@gmail.com", password: "123456", password_confirmation: "123456")
 user2 = User.create(name: "Lucia", username: "Lucia", email: "lucia@gmail.com", password: "123456", password_confirmation: "123456")
 
-
+Pet.destroy_all
 Pet.create!(name: "Tom", species: "cat", shelter: lisbon_shelter, user: user, food_level: 100, satisfaction: 100, boredom: 0 )
 
 
@@ -47,6 +47,7 @@ Chatroom.create(name: "dogs")
 
 Message.create!(content: "Hey! I found a cat, help me !", chatroom: room2, user: user)
 Message.create!(content: "Hey! I can help you!", chatroom: room2, user: user2)
+
 
 Item.destroy_all
 Item.create!(name: "A cheap bag of wet food", price: 0, description: " Sometimes we can't afford better meals but we still want to sustain our loved ones.", category: "food")
