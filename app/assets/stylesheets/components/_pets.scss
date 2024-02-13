@@ -8,16 +8,16 @@
   padding: 24px;
 }
 
-
 .pet-display {
   display: flex;
   background-image: image-url('sunset.jpg');
   background-size: cover;
   justify-content: space-between;
+  position: relative;
   border-radius: 10px; /* Rounded corners */
   padding: 20px; /* Space inside the border */
   margin: 20px auto; /* Center the display and add space around it */
-  max-width: 150vh; /* Min width of the display */
+  max-width: 140vh; /* Min width of the display */
   box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* A subtle shadow for depth */
 
   h2 {
@@ -34,19 +34,18 @@
   }
 
   .pet-image {
-    align-self: center; /* Centers the image and adds space below */
-    justify-self: center;
+    position: absolute;
+    top: 316px;
+    left: 620px;
     display: block; /* Ensures the image is a block-level element */
-    width: 300px; /* Width of the image */
-    height: 300px; /* Height of the image */
+    width: 450px; /* Width of the image */
+    height: 450px; /* Height of the image */
     object-fit: cover; /* Ensures the image covers the area without being stretched */
-
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
   }
 }
-
 
 .pet-actions {
   display: flex;
@@ -54,18 +53,57 @@
   text-align: center; /* Center the buttons */
   margin-top: 20px ; /* Add space above the button group */
 
-  .secondary-button {
-    display: inline-block;
-    margin-right: 10px;
-    /* Add more styling for  buttons */
+  .dog-food-icon{
+    background-image: image-url('dog-food.jpg');
   }
 }
 
-.message{
+.pet-message{
   align-self: center;
   justify-self: center;
+  align-items: center;
   background-color: #ffffff;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  font-size:larger;
+  font-size: larger;
+  padding: 16px;
   margin: 24px;
+  border-radius: 8px;
+}
+
+.dog-food-icon{
+  background: none;
+  border: none;
+  padding: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+
+  .food-icon{
+    width: 80px;
+    height: 80px;
+  }
+}
+
+.dog-toy-icon{
+  background: none;
+  border: none;
+  padding: 10px;
+  margin-left: 16px;
+  margin-right: 16px;
+
+  .toy-icon{
+    width: 80px;
+    height: 80px;
+  }
+}
+
+.dog-medical-icon{
+  background: none;
+  border: none;
+  padding: 10px;
+  margin-left: 10px;
+  margin-right: 16px;
+
+  .health-icon{
+    width: 80px;
+    height: 80px;
+  }
 }

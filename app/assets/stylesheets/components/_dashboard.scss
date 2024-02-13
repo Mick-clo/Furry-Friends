@@ -57,7 +57,7 @@
 
 .profile-pic-icon{
   text-decoration: none;
-  color:#e45e05;
+  color:#e47c05;
   width: 20px;
   height: 20px;
   position: absolute;
@@ -82,12 +82,13 @@
 
 .your-pet{
   text-align: center;
-  padding-right: 16px;
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: center;
   width: 160px;
+  margin: 0 auto;
+  padding-right: 10px;
 }
 
 .pet-picture{
@@ -108,7 +109,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 10px;
+  margin: none;
 }
 
 #petDropdown{
@@ -226,9 +227,9 @@
   background-color: #f0f0f0;
   padding: 10px;
   border-radius: 8px;
-  max-width: 300px;
+  max-width: 280px;
   border: none;
-  margin: 10px;
+  margin: 8px;
 }
 
 .card-icon {
@@ -246,6 +247,7 @@
 .card-title {
   font-weight: bold;
   color: #333;
+  font-size: 20px;
 }
 
 .history{
@@ -255,6 +257,7 @@
   padding: 20px;
   border-radius: 8px;
   text-align: center;
-  margin-top: 20px;
+  margin-top: 10px;
+  margin-left: 10px;
   max-height: 250px;
 }
