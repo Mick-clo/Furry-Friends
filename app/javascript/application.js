@@ -7,3 +7,5 @@ import "bootstrap"
 import "@rails/actioncable"
 //= require d3
 
+import "chartkick"
+import "Chart.bundle"
