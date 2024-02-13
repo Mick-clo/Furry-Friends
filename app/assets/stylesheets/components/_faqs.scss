@@ -1,0 +1,22 @@
+.faq-container {
+  max-width: 600px;
+  height: 900px;
+  margin: auto;
+}
+
+.faq-question h3 {
+  cursor: pointer;
+  padding: 10px;
+
+  margin-top: 5px;
+}
+
+.faq-answer {
+  padding: 10px;
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
