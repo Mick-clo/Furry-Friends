@@ -51,7 +51,7 @@ gem "devise"
 gem "autoprefixer-rails"
 gem "font-awesome-sass", "~> 6.1"
 gem "simple_form", github: "heartcombo/simple_form"
-gem "sassc-rails"
+
 gem 'omniauth-google-oauth2'
 gem "omniauth-rails_csrf_protection"
 gem "sidekiq", "~> 6.5.5"
@@ -59,8 +59,11 @@ gem "sidekiq-failures", "~> 1.0"
 gem "cloudinary"
 gem 'money-rails'
 gem 'stripe'
+gem "chartkick"
+gem "groupdate"
 
 gem 'stripe_event'
+gem "rails_admin", "3.0"
 
 group :development, :test do
   gem "dotenv-rails"
@@ -86,3 +89,4 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+gem "sassc-rails"

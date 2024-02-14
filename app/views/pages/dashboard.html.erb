@@ -1,15 +1,22 @@
 <div class="container-dashboard">
   <div class="container">
     <div class="user-greeting">
-      <h1 class="title">Hey <%=@user.username%> <%=cl_image_tag current_user.avatar.key, class: "avatar-dashboard"%></h1>
-      <div data-controller="adding-button-for-profile-picture" class="update-button">
-        <a data-action="click->adding-button-for-profile-picture#openModal" class=" icon fa-solid fa-pencil"></a>
-        <div data-adding-button-for-profile-picture-target="modal" id="change_avatar" class="d-none"> <%= render "form_picture" %></div>
+
+      <h1 class="title">Hey <%=@user.username%></h1>
+      <div data-controller="adding-button-for-profile-picture" class="avatar-box update-button position-relative">
+        <%if current_user.avatar.attached?%>
+          <%=cl_image_tag current_user.avatar.key, class: "avatar-dashboard"%>
+        <%else%>
+          <%= image_tag "cat-paw.jpg", class: "avatar-dashboard"%>
+        <%end%>
+        <a data-action="click->adding-button-for-profile-picture#openModal" class="profile-pic-icon" ><i class="fa-solid fa-pencil"></i></a>
+        <div data-adding-button-for-profile-picture-target="modal" id="change_avatar" class="avatar-form d-none"> <%= render "form_picture" %></div>
+
       </div>
     </div>
     <div class="container-first">
       <div class="dropdown">
-        <a class="fa fa-chevron-circle-down" id="petDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Your pets</a>
+        <a id="petDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-chevron-circle-down"></i>Your pets</a>
         <div class="dropdown-menu" aria-labelledby="petDropdown">
           <% if @pets.length > 1 %>
             <% @pets.each do |pet| %>
@@ -61,7 +68,7 @@
     <div class="container-second">
       <div class="rank-table">
         <h2>Top donations of the month</h2>
-        <table class="sryled-table">
+        <table class="styled-table">
           <tr>
             <th>Place</th>
             <th>Pet owner</th>
@@ -138,7 +145,7 @@
             </div>
             <div class="card-content">
               <h2 class="card-title">Donated Amount</h2>
-              <h5 class="card-number"> 25$ </h5>
+              <h5 class="card-number"> <%= current_user.accumulated_donations %>€ </h5>
             </div>
           </div>
           <div class="card">
@@ -154,7 +161,11 @@
         <div class="history">
           <p>History</p>
           <div class="activity-graph">
-
+            <%= column_chart current_user.paid_orders.group_by_month(:created_at).sum(:euro),
+            min: 0, max: 30, width: "500px", height: "180px",
+            stacked: true, discrete: true, label: "Amount", prefix: "€",
+            decimal: ",", round: 2, zeros: true, loading: "Loading...",
+            empty: "No data", refresh: 320 %>
         </div>
         </div>
       </div>
