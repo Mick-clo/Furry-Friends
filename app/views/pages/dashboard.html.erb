@@ -63,79 +63,28 @@
         <h3><%= @random_message %></h3>
       </div>
     </div>
-
     <div class="container-second">
-      <div class="rank-table">
-        <h2>Top donations of the month</h2>
-        <table class="styled-table">
-          <tr>
-            <th>Place</th>
-            <th>Pet owner</th>
-            <th>Pet satisfaction level</th>
-            <th>Donated amount</th>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>John Winter</td>
-            <td>98%</td>
-            <td>$100.00</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>Jane Smith</td>
-            <td>95%</td>
-            <td>$75.00</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>Michael Brown</td>
-            <td>92%</td>
-            <td>$50.00</td>
-          </tr>
-          <tr>
-            <td>4</td>
-            <td>Sarah Jones</td>
-            <td>89%</td>
-            <td>$25.00</td>
-          </tr>
-          <tr>
-            <td>5</td>
-            <td>David Miller</td>
-            <td>85%</td>
-            <td>$15.00</td>
-          </tr>
-          <tr>
-            <td>6</td>
-            <td>Emma Garcia</td>
-            <td>82%</td>
-            <td>$10.00</td>
-          </tr>
-          <tr>
-            <td>7</td>
-            <td>Charles Rodriguez</td>
-            <td>78%</td>
-            <td>$5.00</td>
-          </tr>
-          <tr>
-            <td>8</td></td>
-            <td>Maria Gonzalez</td>
-            <td>75%</td>
-            <td>$3.00</td>
-          </tr>
-          <tr>
-            <td>9</td></td>
-            <td>Daniel Hernandez</td>
-            <td>72%</td>
-            <td>$2.00</td>
-          </tr>
-          <tr>
-            <td>10</td></td>
-            <td>Isabella Lopez</td>
-            <td>70%</td>
-            <td>$1.00</td>
-          </tr>
-        </table>
-      </div>
+  <div class="rank-table">
+    <h2>Top donations of the month</h2>
+    <table class="styled-table">
+      <tr>
+        <th>Place</th>
+        <th>Pet owner</th>
+        <th>Pet satisfaction level</th>
+        <th>Donated amount</th>
+      </tr>
+
+      <% @leaderboard_users.each_with_index do |user, index| %>
+
+        <tr>
+          <td>#<%= index + 1 %></td>
+          <td> <%= user.username %> </td>
+          <td><%= user.pet.satisfaction %></td>
+          <td><%= user.accumulated_donations %>€</td>
+        </tr>
+      <% end  %>
+    </table>
+    </div>
       <div class="container-right">
         <div class="cards-right">
           <div class="card">
@@ -153,7 +102,7 @@
             </div>
             <div class="card-content">
               <h2 class="card-title">Place in the rank</h2>
-              <h5 class="card-number"> 4 </h5>
+              <h5 class="card-number"> <%= @leaderboard_users.index(@user) + 1 %> </h5>
             </div>
           </div>
         </div>
