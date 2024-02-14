@@ -15,6 +15,6 @@ class ApplicationController < ActionController::Base
   end
 
   def find_general_chat
-    @general = Chatroom.find_by(name: "general😎")
+    @general = Chatroom.find_by(name: "general")
   end
 end
