@@ -26,7 +26,7 @@ class User < ApplicationRecord
   end
 
   def accumulated_donations
-    orders.map { |order| order.item.price if order.state == 'paid' }.sum
+    orders.where(state: "paid").map { |order| order.item.price }.sum
   end
 
   def paid_orders

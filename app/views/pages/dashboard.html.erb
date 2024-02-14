@@ -1,9 +1,7 @@
 <div class="container-dashboard">
   <div class="container">
     <div class="user-greeting">
-    <% if current_user.avatar.key? %>
       <%=cl_image_tag current_user.avatar.key, class: "avatar-dashboard"%>
-    <% end %>
       <h1 class="title">Hey <%=@user.username%></h1>
       <div data-controller="adding-button-for-profile-picture" class="avatar-box update-button position-relative">
 
@@ -159,7 +157,7 @@
         <div class="history">
           <p>History</p>
           <div class="activity-graph">
-            <%= column_chart current_user.paid_orders.group_by_month(:created_at).sum(:euro),
+            <%= column_chart current_user.paid_orders.group_by_month(:created_at, format: "%b").sum(:euro),
             min: 0, max: 30, width: "500px", height: "180px",
             stacked: true, discrete: true, label: "Amount", prefix: "€",
             decimal: ",", round: 2, zeros: true, loading: "Loading...",
