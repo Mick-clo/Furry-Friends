@@ -14,9 +14,9 @@ class Pet < ApplicationRecord
 
   before_create :set_default_levels
   def picture_url
-    if type == 'cat'
+    if species == 'cat'
       'cat.png'
-    elsif type == 'dog'
+    elsif species == 'dog'
       'dog.png'
     else
       'puppy-test'
