@@ -12,12 +12,12 @@ class Pet < ApplicationRecord
   has_many :orders, dependent: :destroy
   has_one_attached :picture
 
-  
+
   before_create :set_default_levels
   def picture_url
-    if type == 'cat'
+    if species == 'cat'
       'cat.png'
-    elsif type == 'dog'
+    elsif species == 'dog'
       'dog.png'
     else
       'puppy-test'
