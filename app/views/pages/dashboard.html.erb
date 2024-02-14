@@ -1,10 +1,12 @@
 <div class="container-dashboard">
   <div class="container">
     <div class="user-greeting">
-
+    <% if current_user.avatar.key? %>
+      <%=cl_image_tag current_user.avatar.key, class: "avatar-dashboard"%>
+    <% end %>
       <h1 class="title">Hey <%=@user.username%></h1>
       <div data-controller="adding-button-for-profile-picture" class="avatar-box update-button position-relative">
-        <%=cl_image_tag current_user.avatar.key, class: "avatar-dashboard"%>
+
         <a data-action="click->adding-button-for-profile-picture#openModal" class="profile-pic-icon" ><i class="fa-solid fa-pencil"></i></a>
         <div data-adding-button-for-profile-picture-target="modal" id="change_avatar" class="avatar-form d-none"> <%= render "form_picture" %></div>
 
