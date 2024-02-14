@@ -1,0 +1,56 @@
+.pet-show-button{
+  border: none;
+  padding: 8px 16px 8px 16px;
+  outline: none;
+  color: white;
+  font-size: 16px;
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+  background: none;
+  text-decoration: none;
+  font-family: 'Montserrat';
+  // font-weight: 200;
+  margin: 16px;
+  margin-top: 24;
+}
+
+.pet-show-button:before, .pet-show-button:after{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 10em;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  width: 105%;
+  height: 105%;
+  content: "";
+  z-index: -2;
+  background-size: 400% 400%;
+  background: linear-gradient(
+    60deg,
+    #FF844C,
+    #D158B2,
+    #AC44F6,
+    #718FF9
+  );
+}
+
+.pet-show-button:before {
+  -webkit-filter: blur(7px);
+  filter: blur(7px);
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+  -webkit-animation: pulse 10s infinite ease;
+  animation: pulse 10s infinite ease;
+}
+
+.pet-show-button:after {
+  -webkit-filter: blur(0.3px);
+  filter: blur(0.3px);
+}
+
+.pet-show-button:hover:before {
+  width: 115%;
+  height: 115%;
+}
