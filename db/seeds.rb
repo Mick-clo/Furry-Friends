@@ -7,7 +7,7 @@ leipzig_shelter = Shelter.create(name: "Hauskatze", description: "Fluffy but evi
 manchester_shelter = Shelter.create(name: "Pets4Life", description: "Simply worth it", address: "Manchester")
 paris_shelter = Shelter.create(name: "Chat Noir", description: "don't pet them", address: "Paris")
 paris1_shelter = Shelter.create(name: "Serpents Serpents", description: "Adoption & care", address: "Paris")
-paris2_shelter = Shelter.create(name: "Consiel Nat Protection Animale", description: "Refuge for animals", address: "Paris")
+paris2_shelter = Shelter.create(name: "Consiel Nat", description: "Refuge for animals", address: "Paris")
 paris3_shelter = Shelter.create(name: "Pigeonnier Javel", description: "Help them to feel happier", address: "Paris")
 dublin_shelter = Shelter.create(name: "Municipal Shelter", description: "Come and choose", address: "Dublin")
 
