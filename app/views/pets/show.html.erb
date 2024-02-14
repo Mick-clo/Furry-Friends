@@ -28,9 +28,10 @@
         </div>
       </div>
     <div class="pet-image">
-      <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script><lottie-player src="https://lottie.host/aebb08bb-d91a-476f-b3d2-277c35e44288/Noeg5jkHx0.json" background="##FFFFFF" speed="1" style="width: 300px; height: 300px" loop autoplay direction="1" mode="normal"></lottie-player>
+      <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+      <dotlottie-player src="https://lottie.host/2c482328-02f3-40fd-8ac5-b7043be3fb2f/T8xThR2QCD.json" background="transparent" speed="1" style="width: 300px; height: 300px;" loop autoplay></dotlottie-player>
     </div>
-    <div class="message">
+    <div class="pet-message">
       <p>
         <% if @pet.satisfaction == 100 %>
           It's great, I am happy!
@@ -48,7 +49,9 @@
 
   <div class="pet-actions " data-controller="donation">
     <div class="food-items">
-      <button class="secondary-button m-2" data-action="click->donation#openCards">Buy food</button>
+      <button class="dog-food-icon" data-action="click->donation#openCards">
+        <%= image_tag 'dog-food.jpg', class:"food-icon"%>
+      </button>
 
       <div data-donation-target="foodItems" class="d-none">
 
@@ -72,7 +75,10 @@
     </div>
 
     <div class="toy-items">
-      <button class="secondary-button m-2" data-action="click->donation#openCards">Buy a new toy</button>
+      <button class="dog-toy-icon" data-action="click->donation#openCards">
+        <%= image_tag 'dog-toy.png', class:"toy-icon"%>
+      </button>
+
       <div data-donation-target="toyItems" class="d-none">
 
         <% @toy_items.each do |item| %>
@@ -91,7 +97,10 @@
     </div>
 
     <div class="medical-items">
-      <button class="secondary-button m-2" data-action="click->donation#openCards">Medical care</button>
+      <button class="dog-medical-icon" data-action="click->donation#openCards">
+        <%= image_tag 'health-care.png', class:"health-icon"%>
+      </button>
+
       <div data-donation-target="medicalItems" class="d-none">
 
         <% @medical_items.each do |item| %>
