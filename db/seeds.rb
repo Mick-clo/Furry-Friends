@@ -1,12 +1,28 @@
 require "open-uri"
 
 Shelter.destroy_all
-lisbon_shelter = Shelter.create(name: "Cachorro", description: "awesome doggos", address: "Lisbon")
+lisbon_shelter = Shelter.create(name: "Cachorro", description: "Awesome doggos", address: "Lisbon")
 brescia_shelter = Shelter.create(name: "Cani&Gatti", description: "Smart and cute", address: "Brescia")
 leipzig_shelter = Shelter.create(name: "Hauskatze", description: "Fluffy but evilish", address: "Leipzig")
-manchester_shelter = Shelter.create(name: "Pets4Life", description: "simply worth it", address: "Manchester")
+manchester_shelter = Shelter.create(name: "Pets4Life", description: "Simply worth it", address: "Manchester")
 paris_shelter = Shelter.create(name: "Chat Noir", description: "don't pet them", address: "Paris")
-dublin_shelter = Shelter.create(name: "Municipal Shelter", description: "come and choose", address: "Dublin")
+paris1_shelter = Shelter.create(name: "Serpents Serpents", description: "Adoption & care", address: "Paris")
+paris2_shelter = Shelter.create(name: "Consiel Nat", description: "Refuge for animals", address: "Paris")
+paris3_shelter = Shelter.create(name: "Pigeonnier Javel", description: "Help them to feel happier", address: "Paris")
+dublin_shelter = Shelter.create(name: "Municipal Shelter", description: "Come and choose", address: "Dublin")
+
+
+paris1_image = URI.open("https://www.hillspet.com/content/dam/cp-sites/hills/hills-pet/en_us/exported/pet-care/Skyword/images/basset-hound-sleeps-on-sleeping-tabby-cat_308513_ref.png")
+paris1_shelter.photo.attach(io: paris1_image, filename: "shelter.png", content_type: "image/png")
+paris1_shelter.save
+
+paris2_image = URI.open("https://hips.hearstapps.com/hmg-prod/images/here-come-the-girls-royalty-free-image-1637143818.jpg")
+paris2_shelter.photo.attach(io: paris2_image, filename: "shelter.png", content_type: "image/png")
+paris2_shelter.save
+
+paris3_image = URI.open("https://assets-au-01.kc-usercontent.com/633d61f6-9767-024d-b5a4-f803b9cc307b/004601fa-582a-4de6-b521-c29c87004ddc/article-the-pros-and-cons-of-having-cats-and-dogs.jpg")
+paris3_shelter.photo.attach(io: paris3_image, filename: "shelter.png", content_type: "image/png")
+paris3_shelter.save
 
 lisbonne_image = URI.open("https://www.americanhumane.org/app/uploads/2016/08/shutterstock_162633491.jpg")
 lisbon_shelter.photo.attach(io: lisbonne_image, filename: "shelter.png", content_type: "image/png")
@@ -41,9 +57,9 @@ Pet.create!(name: "Tom", species: "cat", shelter: lisbon_shelter, user: user, fo
 
 
 Chatroom.destroy_all
-Chatroom.create(name: "general")
-room2 = Chatroom.create(name: "cats")
-Chatroom.create(name: "dogs")
+Chatroom.create(name: "general😎")
+room2 = Chatroom.create(name: "cats😺")
+Chatroom.create(name: "dogs🐶")
 
 Message.create!(content: "Hey! I found a cat, help me !", chatroom: room2, user: user)
 Message.create!(content: "Hey! I can help you!", chatroom: room2, user: user2)
