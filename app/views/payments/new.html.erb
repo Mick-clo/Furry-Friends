@@ -1,9 +1,9 @@
 <div class="container">
   <div class="row py-4">
     <div class="col">
-      <h1>Checkout summary</h1>
-      <p>Purchase of <strong><%= @order.item.name %></strong> for <strong><%= humanized_money_with_symbol @order.amount %></strong></p>
-      <button id="pay" class="btn btn-primary">Pay</button>
+      <h1>Your Donation details:</h1>
+      <p>Donate of <strong><%= @order.item.name %></strong> for <strong><%= humanized_money_with_symbol @order.amount %></strong></p>
+      <button id="pay" class="btn btn-primary">Donate</button>
 
       <script src="https://js.stripe.com/v3/"></script>
       <script>
