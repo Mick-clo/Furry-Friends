@@ -1,11 +1,17 @@
+.homepage-bg{
+  min-height:100vh;
+  background-image:image-url("BG.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+}
+
 .banner{
-  height:100vh;
+  min-height:100vh;
   display: flex;
+  flex-grow: 1;
   justify-content: space-around;
   align-items:center;
-  background-image:image-url("BG.jpg");
   // image:image-url("Doggo.jpg") ; background-position: right top;
-  background-size: cover;
   margin-bottom: -64px;
   color: #333;
   h1{

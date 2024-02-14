@@ -1,5 +1,7 @@
 <%= form_with url: orders_path do %>
   <%= hidden_field_tag 'item_id', item.id %>
   <%= hidden_field_tag 'pet_id', pet.id %>
-  <%= submit_tag 'Donate now!', class: 'btn btn-primary' %>
+  <%= button_tag(type: 'submit', class: 'pet-show-button') do %>
+    Donate!
+  <% end %>
 <% end %>

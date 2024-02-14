@@ -34,14 +34,14 @@ class PetsController < ApplicationController
 
   def play
     change_levels(0, 5, -10)
-    redirect_to @pet, notice: 'Thank you for your 5$ donation!'
+    redirect_to @pet
   end
 
   def care
     change_levels(0, 0, -5)
     @pet.health = [@pet.health + 10, 100].min
     @pet.save
-    redirect_to @pet, notice: 'Thank you for your 5$ donation!'
+    redirect_to @pet
   end
 
   def pets_random_message
