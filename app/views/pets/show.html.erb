@@ -1,5 +1,5 @@
 
-<div class="pet-container">
+<div>
   <div class="pet-name"><h2><%= @pet.name %></h2></div>
   <div class="pet-display">
     <div class="show-stats">
@@ -28,8 +28,15 @@
         </div>
       </div>
     <div class="pet-image">
-      <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
-      <dotlottie-player src="https://lottie.host/2c482328-02f3-40fd-8ac5-b7043be3fb2f/T8xThR2QCD.json" background="transparent" speed="1" style="width: 300px; height: 300px;" loop autoplay></dotlottie-player>
+      <% if @pet.species == 'dog'%>
+        <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+        <dotlottie-player src="https://lottie.host/2c482328-02f3-40fd-8ac5-b7043be3fb2f/T8xThR2QCD.json" background="transparent" speed="1" style="width: 300px; height: 300px;" loop autoplay></dotlottie-player>
+      <% elsif @pet.species == 'cat'%>
+        <div class="cat-div">
+          <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+          <dotlottie-player src="https://lottie.host/bb79c63e-1966-40f6-bc72-fa5e68cb0fca/t1pob5ccCQ.json" background="transparent" speed="1" style="width: 300px; height: 300px;" loop autoplay></dotlottie-player>
+        </div>
+      <%end%>
     </div>
     <div class="pet-message">
       <p>
@@ -46,77 +53,80 @@
         <% end %>
       </p></div>
   </div>
+  <div class="pet-actions-container" data-controller="donation">
 
-  <div class="pet-actions " data-controller="donation">
-    <div class="food-items">
-      <button class="dog-food-icon" data-action="click->donation#openCards">
-        <%= image_tag 'dog-food.jpg', class:"food-icon"%>
-      </button>
+    <div class="pet-actions">
+        <button class="dog-food-icon" data-action="click->donation#openCards">
+          <%= image_tag 'dog-food.jpg', class:"food-icon"%>
+        </button>
 
-      <div data-donation-target="foodItems" class="d-none">
+        <button class="dog-toy-icon" data-action="click->donation#openCards">
+          <%= image_tag 'dog-toy.png', class:"toy-icon"%>
+        </button>
 
-        <% @food_items.each do |item| %>
-
-          <div class="card-product">
-            <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-            <div class="card-product-infos">
-              <h2> <%= item.name %> </h2>
-              <p> Donate <strong><%= humanized_money_with_symbol(item.price) %> - </strong> <%= item.description %> </p>
-              <% if item.price == 0 %>
-                <%= button_to 'Donate!', feed_pet_path(@pet), method: :post, class: "secondary-button m-2" %>
-              <% else %>
-                <%= render 'pets/form', item: item, pet: @pet %>
-              <% end %>
-            </div>
-          </div>
-        <% end %>
-
-      </div>
+        <button class="dog-medical-icon" data-action="click->donation#openCards">
+          <%= image_tag 'health-care.png', class:"health-icon"%>
+        </button>
     </div>
+    <div class="pet-item-actions">
+      <div class="food-items">
 
-    <div class="toy-items">
-      <button class="dog-toy-icon" data-action="click->donation#openCards">
-        <%= image_tag 'dog-toy.png', class:"toy-icon"%>
-      </button>
+        <div data-donation-target="foodItems" class="food-display d-none">
 
-      <div data-donation-target="toyItems" class="d-none">
+          <% @food_items.each do |item| %>
 
-        <% @toy_items.each do |item| %>
-
-          <div class="card-product">
-            <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-            <div class="card-product-infos">
-              <h2> <%= item.name %> </h2>
-              <p> Donate <strong> <%= item.price %> </strong> <%= item.description %> </p>
-              <%= button_to 'Buy a new toy', play_pet_path(@pet), method: :post, class: "secondary-button m-2" %>
+            <div class="card-product">
+              <div class="card-product-infos">
+                <h2> <%= item.name %> </h2>
+                <p> Donate <strong><%= humanized_money_with_symbol(item.price) %> - </strong> <%= item.description %> </p>
+                <% if item.price == 0 %>
+                  <%= button_to 'Donate!', feed_pet_path(@pet), method: :post, class:"pet-show-button" %>
+                <% else %>
+                  <%= render 'pets/form', item: item, pet: @pet %>
+                <% end %>
+              </div>
             </div>
-          </div>
-        <% end %>
+          <% end %>
 
+        </div>
       </div>
-    </div>
 
-    <div class="medical-items">
-      <button class="dog-medical-icon" data-action="click->donation#openCards">
-        <%= image_tag 'health-care.png', class:"health-icon"%>
-      </button>
+      <div class="toy-items">
 
-      <div data-donation-target="medicalItems" class="d-none">
+        <div data-donation-target="toyItems" class="toy-display d-none">
 
-        <% @medical_items.each do |item| %>
+          <% @toy_items.each do |item| %>
 
-          <div class="card-product">
-            <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-            <div class="card-product-infos">
-              <h2> <%= item.name %> </h2>
-              <p> Donate <strong> <%= humanized_money_with_symbol(item.price) %> - </strong> <%= item.description %> </p>
-              <%= button_to 'Medical care', care_pet_path(@pet), method: :post, class: "secondary-button m-2" %>
+            <div class="card-product">
+              <div class="card-product-infos">
+                <h2> <%= item.name %> </h2>
+                <p> Donate <strong> <%= item.price %> </strong> <%= item.description %> </p>
+                <%= button_to 'Buy a new toy', play_pet_path(@pet), method: :post, class:"pet-show-button" %>
+              </div>
             </div>
-          </div>
-        <% end %>
+          <% end %>
 
+        </div>
       </div>
+
+      <div class="medical-items">
+
+        <div data-donation-target="medicalItems" class="health-display d-none">
+
+          <% @medical_items.each do |item| %>
+
+            <div class="card-product">
+              <div class="card-product-infos">
+                <h2> <%= item.name %> </h2>
+                <p> Donate <strong> <%= humanized_money_with_symbol(item.price) %> - </strong> <%= item.description %> </p>
+                <%= button_to 'Medical care', care_pet_path(@pet), method: :post, class:"pet-show-button" %>
+              </div>
+            </div>
+          <% end %>
+
+        </div>
+      </div>
+
     </div>
-
-
   </div>
+</div>
