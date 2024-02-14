@@ -61,6 +61,7 @@ gem 'money-rails'
 gem 'stripe'
 gem "chartkick"
 gem "groupdate"
+gem "pry-byebug"
 
 gem 'stripe_event'
 gem "rails_admin", "3.0"
