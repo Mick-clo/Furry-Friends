@@ -1,7 +1,15 @@
 <div id="message-<%= message.id %>">
   <small>
     <strong><%= message.user.username %></strong>
+
     <i><%= message.created_at.strftime("%a %b %e at %l:%M %p") %></i>
+    <% if current_user.admin? %>
+
+
+      <%= link_to chatroom_message_path(@chatroom, message), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "icon-class" do %>
+      <i class="fas fa-trash-alt m-2" ></i>
+    <% end %>
+    <% end %>
   </small>
   <p><%= message.content %></p>
 </div>
