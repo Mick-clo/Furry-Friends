@@ -1,9 +1,10 @@
-<div class="container">
-  <div class="row py-4">
-    <div class="col">
-      <h1>Checkout summary</h1>
-      <p>Purchase of <strong><%= @order.item.name %></strong> for <strong><%= humanized_money_with_symbol @order.amount %></strong></p>
-      <button id="pay" class="btn btn-primary">Pay</button>
+<div class="banner">
+<div class=" card text-center mb-3  " style="max-width: 500px; margin-inline: auto;box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); background-color: #fff">
+  <div class="row card-body py-4">
+    <div class="col" style="border-radius: 24px; padding: 20px;">
+
+      <p>Click the following button to donate <strong><%= humanized_money_with_symbol @order.amount %></strong> to your favorite shelter</p>
+      <button id="pay" class="primary-button">Donate</button>
 
       <script src="https://js.stripe.com/v3/"></script>
       <script>
@@ -17,4 +18,5 @@
       </script>
     </div>
   </div>
+</div>
 </div>

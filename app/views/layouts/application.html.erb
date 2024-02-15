@@ -24,7 +24,7 @@
   <body>
 
 
-  <div class="page-container">
+  <div class="page-container <%= "pet-background" if params[:controller] == "pets" && params[:action] == "show" %>">
 
   <div class="navbar-container"><%= render "shared/navbar" %></div>
 
@@ -33,7 +33,6 @@
   <%= yield %></div>
 
   <%if @footer%>
-    <br>
     <div class="footer-container"><%= render "shared/footer" %></div>
     </div>
   <%end%>

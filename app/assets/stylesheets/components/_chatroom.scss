@@ -35,7 +35,8 @@
 
 .chatroom-main-container {
   gap: 3%;
-  background-color: rgb(248, 246, 246);
+  background-image: image-url("chatroombg.png");
+  background-size: cover;
 }
 
 .sidebar {

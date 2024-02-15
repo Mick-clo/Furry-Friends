@@ -11,6 +11,9 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+
+
   def pet
     Pet.find_by(user_id: id)
   end
@@ -26,7 +29,7 @@ class User < ApplicationRecord
   end
 
   def accumulated_donations
-    orders.map { |order| order.item.price if order.state == 'paid' }.sum
+    orders.where(state: "paid").map { |order| order.item.price }.sum
   end
 
   def paid_orders
