@@ -74,12 +74,20 @@ pet9 = Pet.create!(name: "Tom", species: "cat", shelter: lisbon_shelter, user: u
 pet10 = Pet.create!(name: "Tom", species: "cat", shelter: lisbon_shelter, user: user10, food_level: 100, satisfaction: 100, boredom: 0 )
 
 Chatroom.destroy_all
-Chatroom.create(name: "general😎")
+room1 = Chatroom.create(name: "general😎")
 room2 = Chatroom.create(name: "cats😺")
 Chatroom.create(name: "dogs🐶")
 
 Message.create!(content: "Hey! I found a cat, help me !", chatroom: room2, user: user)
 Message.create!(content: "Hey! I can help you!", chatroom: room2, user: user2)
+Message.create!(content: "hey everyone! I've already donated 200$ with this app, please help me 😥", chatroom: room1, user: user3)
+Message.create!(content: "OMG I simply love it! It's exactly what I was looking for!", chatroom: room1, user: user4)
+Message.create!(content: "Hiiii! I am from Brazil and I'm new here. Where do you guys come from?", chatroom: room1, user: user5)
+Message.create!(content: "Here I can find all the shelters nearby my house ssoo easily, I love it!", chatroom: room1, user: user3)
+Message.create!(content: "Better cats or dogs? ah! I have them both thanks to this website!", chatroom: room1, user: user6)
+Message.create!(content: "Me tooo!", chatroom: room1, user: user2)
+Message.create!(content: "Hej! I am Luis and I am from Spain!", chatroom: room1, user: user2)
+
 
 
 
