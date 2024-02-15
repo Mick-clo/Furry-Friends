@@ -1,3 +1,9 @@
+.pet-background{
+  background-image: image-url("pet-background.png");
+  background-size: cover;
+  font-family: 'Montserrat';
+}
+
 .pet-name{
   text-align: center;
   margin: 10px;
@@ -14,9 +20,9 @@
   background-size: cover;
   justify-content: space-between;
   position: relative;
-  border-radius: 10px; /* Rounded corners */
+  border-radius: 24px; /* Rounded corners */
   padding: 20px; /* Space inside the border */
-  margin: 20px auto; /* Center the display and add space around it */
+  margin: 16px auto; /* Center the display and add space around it */
   max-width: 140vh; /* Min width of the display */
   box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* A subtle shadow for depth */
 
@@ -35,27 +41,24 @@
 
   .pet-image {
     position: absolute;
-    top: 316px;
-    left: 580px;
+    top: 348px;
+    left: 500px;
     display: block; /* Ensures the image is a block-level element */
     width: 450px; /* Width of the image */
-    height: 450px; /* Height of the image */
     object-fit: cover; /* Ensures the image covers the area without being stretched */
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
+
   }
 }
 
 .pet-actions {
   display: flex;
+  flex-direction: row;
   justify-content: center;
   text-align: center; /* Center the buttons */
   margin-top: 20px ; /* Add space above the button group */
-
-  .dog-food-icon{
-    background-image: image-url('dog-food.jpg');
-  }
 }
 
 .pet-message{
@@ -72,9 +75,9 @@
 .dog-food-icon{
   background: none;
   border: none;
-  padding: 10px;
-  margin-left: 10px;
-  margin-right: 10px;
+  // padding: 10px;
+  //margin-left: 10px;
+  //margin-right: 10px;
 
   .food-icon{
     width: 80px;
@@ -105,5 +108,47 @@
   .health-icon{
     width: 80px;
     height: 80px;
+  }
+}
+
+.pet-item-actions{
+  display: flex;
+  justify-content: center;
+}
+.food-display{
+  display: flex;
+  justify-content: space-between;
+  border-radius: 24px;
+}
+
+.toy-display{
+  display: flex;
+}
+
+.health-display{
+  display: flex;
+}
+
+.card-product{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  margin: 16px;
+  border-radius: 24px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  max-width: 400px;
+  min-height: 156px;
+
+  .card-product-infos{
+    padding: 16px;
+    margin: 16px;
+  }
+
+  .h2{
+    padding: 16px;
+    margin: 10px;
   }
 }

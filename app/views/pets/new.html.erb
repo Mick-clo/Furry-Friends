@@ -13,8 +13,8 @@
     <i class="fa-solid fa-paw p-2"></i>
     <h5 class="p-2"> Choose your pet: </h5>
     <%= f.input_field :species, as: :radio_buttons,
-      collection: [['0', (image_tag "shiba 1.png", alt: "Dog", class:"photo-pet", data: {action:"click->sounds#playDog"})],
-                   ['1', (image_tag "blackCat 1.png", alt: "Cat", class:"photo-pet", data: {action:"click->sounds#playCat"})]
+      collection: [['dog', (image_tag "shiba 1.png", alt: "Dog", class:"photo-pet", data: {action:"click->sounds#playDog"})],
+                   ['cat', (image_tag "blackCat 1.png", alt: "Cat", class:"photo-pet", data: {action:"click->sounds#playCat"})]
                   ], label_method: :second,
       value_method: :first %>
   </div>
