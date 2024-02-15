@@ -29,7 +29,7 @@ class PetsController < ApplicationController
 
   def feed
     change_levels(20, 5, -5)
-    # redirect_to @pet, notice: 'Thank you for your 5$ donation!'
+    redirect_to @pet
   end
 
   def play

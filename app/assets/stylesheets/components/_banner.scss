@@ -11,7 +11,8 @@
   flex-grow: 1;
   justify-content: space-around;
   align-items:center;
-  // image:image-url("Doggo.jpg") ; background-position: right top;
+  background-image:image-url("BG.jpg");
+  background-size: cover;
   margin-bottom: -64px;
   color: #333;
   h1{

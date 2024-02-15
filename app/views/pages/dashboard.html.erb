@@ -28,7 +28,7 @@
         <div class="pet-stats">
           <div class="your-pet">
             <%=link_to pet_path(@pet) do%>
-              <%= image_tag @user.picture_url, class:"pet-picture"%>
+              <%= image_tag @pet.picture_url, class:"pet-picture"%>
             <%end%>
             <%= @pet.name%>
           </div>
