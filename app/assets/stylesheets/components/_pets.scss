@@ -132,8 +132,9 @@
 .card-product{
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
   padding: 16px;
   margin: 16px;
   border-radius: 24px;
@@ -142,13 +143,14 @@
   max-width: 400px;
   min-height: 156px;
 
-  .card-product-infos{
-    padding: 16px;
-    margin: 16px;
-  }
-
   .h2{
     padding: 16px;
     margin: 10px;
+  }
+
+  .pet-show-button{
+    position: absolute;
+    top: 85px;
+    right: 5px;
   }
 }
