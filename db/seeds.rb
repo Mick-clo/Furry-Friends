@@ -88,7 +88,7 @@ item2 = Item.create!(name: "Canned food", price: 5, description: " Meat's the ne
 item3 = Item.create!(name: "Commercial raw pet food", price: 10, description: " Feed the hunter that lies within your adorable friend, as nature intended.", category: "food")
 
 item4 = Item.create!(name: "A tennis ball", price: 0, description: " Found on the street.. Looks like new..", category: "toy")
-item5 = Item.create!(name: "A small peluche", price: 5, description: " With it, the cuteness of your pet will double, guaranteed.", category: "toy")
+item5 = Item.create!(name: "A small plushie", price: 5, description: " With it, the cuteness of your pet will double, guaranteed.", category: "toy")
 item6 = Item.create!(name: "Puzzle feeder", price: 10, description: " Train your pets and make them smarter!", category: "toy")
 
 item7 = Item.create!(name: "One aspirin", price: 0, description: " And the pain goes away! Back to playing!", category: "medical")
