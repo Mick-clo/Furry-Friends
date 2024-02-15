@@ -5,7 +5,7 @@ class SheltersController < ApplicationController
     @shelters = Shelter.all
     @user = current_user
     @favourite_shelter = @user.pets
-    
+
 
     if params[:address].present?
       @shelters = @shelters.near(params[:address])
