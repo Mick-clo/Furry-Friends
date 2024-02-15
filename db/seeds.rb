@@ -62,7 +62,7 @@ user9 = User.create(name: "Maria", username: "Maria", email: "maria@gmail.com", 
 user10 = User.create(name: "Luis", username: "Luis", email: "luis@gmail.com", password: "123456", password_confirmation: "123456")
 
 Pet.destroy_all
-pet1 = Pet.create!(name: "Tom", species: "cat", shelter: lisbon_shelter, user: user, food_level: 100, satisfaction: 100, boredom: 0 )
+pet1 = Pet.create!(name: "Tom", species: "cat", shelter: lisbon_shelter, user: user, food_level: 80, satisfaction: 95, boredom: 0 )
 pet2 = Pet.create!(name: "Garfield", species: "cat", shelter: lisbon_shelter, user: user2, food_level: 100, satisfaction: 100, boredom: 0 )
 pet3 = Pet.create!(name: "Otto", species: "dog", shelter: lisbon_shelter, user: user3, food_level: 100, satisfaction: 100, boredom: 0 )
 pet4 = Pet.create!(name: "Tom", species: "cat", shelter: lisbon_shelter, user: user4, food_level: 100, satisfaction: 100, boredom: 0 )
@@ -80,6 +80,7 @@ Chatroom.create(name: "dogs🐶")
 
 Message.create!(content: "Hey! I found a cat, help me !", chatroom: room2, user: user)
 Message.create!(content: "Hey! I can help you!", chatroom: room2, user: user2)
+
 
 
 Item.destroy_all
