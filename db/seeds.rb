@@ -5,16 +5,17 @@ lisbon_shelter = Shelter.create(name: "Cachorro", description: "Awesome doggos",
 brescia_shelter = Shelter.create(name: "Cani&Gatti", description: "Smart and cute", address: "Brescia")
 leipzig_shelter = Shelter.create(name: "Hauskatze", description: "Fluffy but evilish", address: "Leipzig")
 manchester_shelter = Shelter.create(name: "Pets4Life", description: "Simply worth it", address: "Manchester")
-paris_shelter = Shelter.create(name: "Chat Noir", description: "don't pet them", address: "Paris")
-paris1_shelter = Shelter.create(name: "Serpents Serpents", description: "Adoption & care", address: "Paris")
-paris2_shelter = Shelter.create(name: "Consiel Nat", description: "Refuge for animals", address: "Paris")
-paris3_shelter = Shelter.create(name: "Pigeonnier Javel", description: "Help them to feel happier", address: "Paris")
+paris_shelter = Shelter.create(name: "Chat Noir", description: "Fluffy and lovely", address: "Paris, rue las cases")
+paris1_shelter = Shelter.create(name: "Quatre Pattes", description: "Help them to feel happier", address: "Paris, rue grétry")
+paris2_shelter = Shelter.create(name: "Consiel Nat", description: "Refuge for animals", address: "Paris, rue ledion")
+paris3_shelter = Shelter.create(name: "Pigeonnier Javel", description: "Adoption & care", address: "Paris, avenue du géneral dodds")
 dublin_shelter = Shelter.create(name: "Municipal Shelter", description: "Come and choose", address: "Dublin")
 
 
 paris1_image = URI.open("https://www.hillspet.com/content/dam/cp-sites/hills/hills-pet/en_us/exported/pet-care/Skyword/images/basset-hound-sleeps-on-sleeping-tabby-cat_308513_ref.png")
 paris1_shelter.photo.attach(io: paris1_image, filename: "shelter.png", content_type: "image/png")
 paris1_shelter.save
+
 
 paris2_image = URI.open("https://hips.hearstapps.com/hmg-prod/images/here-come-the-girls-royalty-free-image-1637143818.jpg")
 paris2_shelter.photo.attach(io: paris2_image, filename: "shelter.png", content_type: "image/png")
@@ -83,25 +84,29 @@ Message.create!(content: "Hey! I can help you!", chatroom: room2, user: user2)
 
 Item.destroy_all
 item1 = Item.create!(name: "A cheap bag of wet food", price: 0, description: " Sometimes we can't afford better meals but we still want to sustain our loved ones.", category: "food")
-item2 = Item.create!(name: "Canned food", price: 5, description: " Meat's the need of your pet!.", category: "food")
-item3 = Item.create!(name: "Commercial raw pet food", price: 10, description: " Feed the hunter that lies within your adorable friend, as nature intended", category: "food")
+item2 = Item.create!(name: "Canned food", price: 5, description: " Meat's the need of your pet!", category: "food")
+item3 = Item.create!(name: "Commercial raw pet food", price: 10, description: " Feed the hunter that lies within your adorable friend, as nature intended.", category: "food")
 
 item4 = Item.create!(name: "A tennis ball", price: 0, description: " Found on the street.. Looks like new..", category: "toy")
-item5 = Item.create!(name: "A small peluche", price: 5, description: " With it, the cuteness of your pet will double, guaranteed", category: "toy")
+item5 = Item.create!(name: "A small peluche", price: 5, description: " With it, the cuteness of your pet will double, guaranteed.", category: "toy")
 item6 = Item.create!(name: "Puzzle feeder", price: 10, description: " Make them smarter!", category: "toy")
 
 item7 = Item.create!(name: "One aspirin", price: 0, description: " And the pain goes away!", category: "medical")
-item8 = Item.create!(name: "A vaccination", price: 5, description: " For stronger maladies", category: "medical")
-item9 = Item.create!(name: "A complete health care treatment plan", price: 10, description: " It's not a critical situation, but I want the best for my beloved", category: "medical")
+item8 = Item.create!(name: "A vaccination", price: 5, description: " For stronger maladies.", category: "medical")
+item9 = Item.create!(name: "A complete health care treatment plan", price: 10, description: " It's not a critical situation, but I want the best for my beloved.", category: "medical")
 
 Order.destroy_all
 Order.create!(pet: pet2, item: item2, state: 'paid', amount_cents: 500, euro: 5)
+Order.create!(pet: pet2, item: item5, state: 'paid', amount_cents: 500, euro: 5)
+Order.create!(pet: pet2, item: item2, state: 'paid', amount_cents: 500, euro: 5)
+
 Order.create!(pet: pet3, item: item2, state: 'paid', amount_cents: 500, euro: 5)
+Order.create!(pet: pet3, item: item8, state: 'paid', amount_cents: 500, euro: 5)
 
 Order.create!(pet: pet4, item: item3, state: 'paid', amount_cents: 1000, euro: 10)
 Order.create!(pet: pet4, item: item3, state: 'paid', amount_cents: 1000, euro: 10)
 Order.create!(pet: pet4, item: item3, state: 'paid', amount_cents: 1000, euro: 10)
-Order.create!(pet: pet4, item: item3, state: 'paid', amount_cents: 1000, euro: 10)
+Order.create!(pet: pet4, item: item9, state: 'paid', amount_cents: 1000, euro: 10)
 Order.create!(pet: pet4, item: item3, state: 'paid', amount_cents: 1000, euro: 10)
 Order.create!(pet: pet4, item: item3, state: 'paid', amount_cents: 1000, euro: 10)
 Order.create!(pet: pet4, item: item3, state: 'paid', amount_cents: 1000, euro: 10)
@@ -118,7 +123,7 @@ Order.create!(pet: pet6, item: item2, state: 'paid', amount_cents: 500, euro: 5)
 Order.create!(pet: pet6, item: item3, state: 'paid', amount_cents: 1000, euro: 10)
 Order.create!(pet: pet6, item: item3, state: 'paid', amount_cents: 1000, euro: 10)
 Order.create!(pet: pet6, item: item3, state: 'paid', amount_cents: 1000, euro: 10)
-Order.create!(pet: pet6, item: item3, state: 'paid', amount_cents: 1000, euro: 10)
+Order.create!(pet: pet6, item: item6, state: 'paid', amount_cents: 1000, euro: 10)
 
 Order.create!(pet: pet7, item: item2, state: 'paid', amount_cents: 500, euro: 5)
 Order.create!(pet: pet7, item: item2, state: 'paid', amount_cents: 500, euro: 5)
@@ -139,5 +144,5 @@ Order.create!(pet: pet10, item: item3, state: 'paid', amount_cents: 1000, euro: 
 Order.create!(pet: pet7, item: item3, state: 'paid', amount_cents: 1000, euro: 10)
 
 Order.create!(pet: pet1, item: item1, state: 'paid', amount_cents: 0, euro: 0, created_at: "Mon, 1 Jan 2024 13:36:36.856149000 UTC +00:00")
-Order.create!(pet: pet1, item: item1, state: 'paid', amount_cents: 0, euro: 0, created_at: "Fri, 1 Dec 2023 13:36:36.856149000 UTC +00:00")
-Order.create!(pet: pet1, item: item1, state: 'paid', amount_cents: 0, euro: 0, created_at: "Wed, 14 Feb 2024 13:36:36.856149000 UTC +00:00")
+Order.create!(pet: pet1, item: item4, state: 'paid', amount_cents: 0, euro: 0, created_at: "Fri, 1 Dec 2023 13:36:36.856149000 UTC +00:00")
+Order.create!(pet: pet1, item: item7, state: 'paid', amount_cents: 0, euro: 0, created_at: "Wed, 14 Feb 2024 13:36:36.856149000 UTC +00:00")
