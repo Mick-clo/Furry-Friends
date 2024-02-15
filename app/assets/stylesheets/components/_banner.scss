@@ -11,6 +11,25 @@
   flex-grow: 1;
   justify-content: space-around;
   align-items:center;
+
+  margin-bottom: -64px;
+  color: #333;
+  h1{
+    font-weight: bold;
+    font-size: 64px;
+  }
+
+  p{
+    font-size: 28px;
+    margin-bottom: 64px;
+  }
+}
+.checkout {
+  min-height:100vh;
+  display: flex;
+  flex-grow: 1;
+  justify-content: space-around;
+  align-items:center;
   background-image:image-url("BG.jpg");
   background-size: cover;
   margin-bottom: -64px;
@@ -24,6 +43,7 @@
     font-size: 28px;
     margin-bottom: 64px;
   }
+}
 
   // #gradient{
   //   background-image: linear-gradient(to right, #4392f1, #ff6ec4, #ffab73, #58d9eb); /* Gradient colors */
@@ -38,4 +58,3 @@
   //   letter-spacing: 1px; /* Spacing between letters */
   //   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
   // }
-}
