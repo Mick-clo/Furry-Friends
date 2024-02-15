@@ -83,17 +83,17 @@ Message.create!(content: "Hey! I can help you!", chatroom: room2, user: user2)
 
 
 Item.destroy_all
-item1 = Item.create!(name: "A cheap bag of wet food", price: 0, description: " Sometimes we can't afford better meals but we still want to sustain our loved ones.", category: "food")
-item2 = Item.create!(name: "Canned food", price: 5, description: " Meat's the need of your pet!", category: "food")
+item1 = Item.create!(name: "A cheap bag of wet food", price: 0, description: " Sometimes we can't afford better meals but we still want to take care of them", category: "food")
+item2 = Item.create!(name: "Canned food", price: 5, description: " Meat's the need of your pet! Make sure to treat them well!", category: "food")
 item3 = Item.create!(name: "Commercial raw pet food", price: 10, description: " Feed the hunter that lies within your adorable friend, as nature intended.", category: "food")
 
 item4 = Item.create!(name: "A tennis ball", price: 0, description: " Found on the street.. Looks like new..", category: "toy")
 item5 = Item.create!(name: "A small peluche", price: 5, description: " With it, the cuteness of your pet will double, guaranteed.", category: "toy")
-item6 = Item.create!(name: "Puzzle feeder", price: 10, description: " Make them smarter!", category: "toy")
+item6 = Item.create!(name: "Puzzle feeder", price: 10, description: " Train your pets and make them smarter!", category: "toy")
 
-item7 = Item.create!(name: "One aspirin", price: 0, description: " And the pain goes away!", category: "medical")
-item8 = Item.create!(name: "A vaccination", price: 5, description: " For stronger maladies.", category: "medical")
-item9 = Item.create!(name: "A complete health care treatment plan", price: 10, description: " It's not a critical situation, but I want the best for my beloved.", category: "medical")
+item7 = Item.create!(name: "One aspirin", price: 0, description: " And the pain goes away! Back to playing!", category: "medical")
+item8 = Item.create!(name: "A vaccination", price: 5, description: " To recover faster from stronger maladies.", category: "medical")
+item9 = Item.create!(name: "Full pet healthcare plan", price: 10, description: " It's not a critical situation, but I want the best for my beloved.", category: "medical")
 
 Order.destroy_all
 Order.create!(pet: pet2, item: item2, state: 'paid', amount_cents: 500, euro: 5)
