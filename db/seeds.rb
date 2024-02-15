@@ -16,6 +16,7 @@ paris1_image = URI.open("https://www.hillspet.com/content/dam/cp-sites/hills/hil
 paris1_shelter.photo.attach(io: paris1_image, filename: "shelter.png", content_type: "image/png")
 paris1_shelter.save
 
+
 paris2_image = URI.open("https://hips.hearstapps.com/hmg-prod/images/here-come-the-girls-royalty-free-image-1637143818.jpg")
 paris2_shelter.photo.attach(io: paris2_image, filename: "shelter.png", content_type: "image/png")
 paris2_shelter.save
